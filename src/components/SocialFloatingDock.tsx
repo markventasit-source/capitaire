@@ -42,7 +42,7 @@ export default function SocialFloatingDock() {
   }));
 
   return (
-    <div className="pointer-events-none fixed right-5 bottom-6 z-40 max-[489px]:hidden md:right-6 md:bottom-8">
+    <div className="pointer-events-none fixed right-5 bottom-6 z-40 max-[589px]:hidden md:right-6 md:bottom-8">
       <FloatingDock
         items={items}
         orientation="vertical"

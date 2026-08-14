@@ -40,7 +40,7 @@ const threadColorLight: [number, number, number] = [165 / 255, 173 / 255, 188 / 
 
 function MobileHero() {
   return (
-    <section className="relative z-10 hidden min-h-[calc(100dvh-80px-76px)] w-full flex-col items-center justify-center bg-transparent px-6 pb-8 pt-4 text-center max-[489px]:flex">
+    <section className="relative z-10 hidden min-h-[calc(100dvh-80px-76px)] w-full flex-col items-center justify-center bg-transparent px-6 pb-8 pt-4 text-center max-[589px]:flex">
       <div className="relative mb-8">
         <MobileHeroGraphic />
       </div>
@@ -87,7 +87,7 @@ function DesktopHero() {
   return (
     <div
       ref={heroRef}
-      className="relative hidden w-full max-w-full min-h-[600px] flex-col justify-between overflow-x-clip bg-navy font-sans text-white selection:bg-primary/30 min-[490px]:flex"
+      className="relative hidden w-full max-w-full min-h-[600px] flex-col justify-between overflow-x-clip bg-navy font-sans text-white selection:bg-primary/30 min-[590px]:flex"
     >
       <div
         className="pointer-events-none absolute inset-0 z-0 h-full w-full"

@@ -35,11 +35,11 @@ export default function RootLayout({
       lang="en"
       className={cn("no-scrollbar h-full overflow-x-clip", "antialiased", inter.variable, "font-sans", geist.variable)}
     >
-      <body className="no-scrollbar relative flex min-h-full w-full max-w-full flex-col overflow-x-clip bg-navy font-sans text-white max-[489px]:bg-transparent">
+      <body className="no-scrollbar relative flex min-h-full w-full max-w-full flex-col overflow-x-clip bg-navy font-sans text-white max-[589px]:bg-transparent">
         <MobileGlowProvider>
           <MobileStickyGradient />
           <Navbar />
-          <main className="no-scrollbar relative z-10 flex-1 overflow-x-clip bg-transparent pt-[88px] max-[489px]:pt-[96px] max-[489px]:pb-[88px]">
+          <main className="no-scrollbar relative z-10 flex-1 overflow-x-clip bg-transparent pt-[88px] max-[589px]:pt-[96px] max-[589px]:pb-[88px]">
             {children}
           </main>
           <SocialFloatingDock />

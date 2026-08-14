@@ -55,7 +55,7 @@ function YouTubeIcon() {
 
 export default function MobileFooter() {
   return (
-    <footer className="relative z-10 hidden w-full bg-transparent px-5 pb-6 pt-4 max-[489px]:block">
+    <footer className="relative z-10 hidden w-full bg-transparent px-5 pb-6 pt-4 max-[589px]:block">
       <div className="grid min-w-0 grid-cols-[0.4fr_0.6fr] border-t border-white/15">
         <nav className="flex min-w-0 flex-col gap-5 border-r border-white/15 py-6 pr-4">
           {footerLinks.map((link) => (

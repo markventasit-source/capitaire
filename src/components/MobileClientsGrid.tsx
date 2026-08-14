@@ -20,7 +20,7 @@ const clients = [
 
 export default function MobileClientsGrid() {
   return (
-    <section className="relative z-10 hidden w-full bg-transparent px-5 pb-12 pt-6 max-[489px]:block">
+    <section className="relative z-10 hidden w-full bg-transparent px-5 pb-12 pt-6 max-[589px]:block">
       <h2 className="mb-5 font-[family-name:var(--font-inter)] text-[36px] font-semibold leading-none tracking-[-0.015em] text-white">
         Clients
       </h2>

@@ -25,7 +25,7 @@ export default function Home() {
       <MobileFaqs />
       <MobileFooter />
       {/* Desktop sections — hidden on compact mobile so sticky hero bg stays visible */}
-      <div className="max-[489px]:hidden">
+      <div className="max-[589px]:hidden">
         <QuestionsTimeline />
         <AdvisoryServicesTabs />
         <ReadinessLens />

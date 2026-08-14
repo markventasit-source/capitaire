@@ -36,7 +36,7 @@ export default function MobileFaqs() {
   };
 
   return (
-    <section className="relative z-10 hidden w-full bg-transparent px-5 pb-10 pt-6 max-[489px]:block">
+    <section className="relative z-10 hidden w-full bg-transparent px-5 pb-10 pt-6 max-[589px]:block">
       <div className="mb-6 flex items-center justify-between gap-4">
         <h2 className="font-[family-name:var(--font-inter)] text-[36px] font-semibold leading-none tracking-[-0.015em] text-white">
           FAQs..

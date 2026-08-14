@@ -17,7 +17,7 @@ export default function MobileBottomNav() {
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-50 hidden max-[489px]:block"
+      className="fixed inset-x-0 bottom-0 z-50 hidden max-[589px]:block"
       aria-label="Mobile navigation"
     >
       <div className="relative mx-auto flex items-center gap-3 overflow-hidden rounded-t-[28px] bg-[#1F2B42]/60 px-4 py-3.5 shadow-[0_-8px_32px_rgba(0,0,0,0.35)] backdrop-blur-xl backdrop-saturate-150">

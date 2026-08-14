@@ -27,7 +27,7 @@ const stats = [
 
 export default function MobileStatsGrid() {
   return (
-    <section className="relative z-10 hidden w-full bg-transparent px-5 pb-12 pt-4 max-[489px]:block">
+    <section className="relative z-10 hidden w-full bg-transparent px-5 pb-12 pt-4 max-[589px]:block">
       <div className="grid grid-cols-2 gap-x-5 gap-y-8">
         {stats.map((stat) => (
           <div

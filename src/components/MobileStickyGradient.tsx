@@ -34,7 +34,7 @@ export function useMobileGlow() {
 }
 
 /**
- * Fixed hero backdrop for the compact mobile shell (< 490px).
+ * Fixed hero backdrop for the compact mobile shell (< 590px).
  * Stays locked to the viewport so it remains visible behind
  * the service cards (and other transparent mobile sections) while scrolling.
  */
@@ -42,7 +42,7 @@ export default function MobileStickyGradient() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 hidden max-[489px]:block"
+      className="pointer-events-none fixed inset-0 z-0 hidden max-[589px]:block"
     >
       <div className="absolute inset-0 bg-[#0B1220]" />
 

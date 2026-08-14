@@ -149,7 +149,7 @@ export default function MobileServicesCards() {
     const section = sectionRef.current;
     if (!section) return;
 
-    const compact = window.matchMedia("(max-width: 489px)");
+    const compact = window.matchMedia("(max-width: 589px)");
     const cards = Array.from(section.querySelectorAll<HTMLElement>("[data-glow]"));
     const ratios = new Map<string, number>();
 
@@ -200,7 +200,7 @@ export default function MobileServicesCards() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-10 hidden w-full bg-transparent px-4 pb-12 pt-2 max-[489px]:block"
+      className="relative z-10 hidden w-full bg-transparent px-4 pb-12 pt-2 max-[589px]:block"
     >
       <div className="flex flex-col gap-6">
         {services.map((service) => (
