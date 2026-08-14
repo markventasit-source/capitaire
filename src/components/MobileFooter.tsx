@@ -70,7 +70,7 @@ export default function MobileFooter() {
         </nav>
 
         <div className="flex min-w-0 flex-col gap-4 py-6 pl-4">
-          <div className="flex w-full min-w-0 flex-nowrap items-center gap-1.5">
+          <div className="grid w-full min-w-0 grid-cols-4 gap-1.5">
             {socialLinks.map((social) => (
               <Link
                 key={social.label}
@@ -78,7 +78,7 @@ export default function MobileFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="flex aspect-square size-8 min-w-0 flex-1 max-w-9 shrink items-center justify-center rounded-full border border-[#CBA64B] text-[#CBA64B]"
+                className="flex aspect-square w-full items-center justify-center rounded-full border border-[#CBA64B] text-[#CBA64B]"
               >
                 <social.icon />
               </Link>
@@ -102,7 +102,7 @@ export default function MobileFooter() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 border-t border-white/15 py-6">
+      <div className="flex flex-col gap-5 border-t border-white/15 py-6 pr-[20px]">
         {addresses.map((address) => (
           <p
             key={address}
