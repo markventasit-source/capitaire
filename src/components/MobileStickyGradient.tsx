@@ -9,22 +9,27 @@ import {
   type ReactNode,
 } from "react";
 
+export const SERVICE_GLOW = "#CBA64B";
+
 type GlowContextValue = {
-  glow: string | null;
-  setGlow: (color: string | null) => void;
+  activeTitle: string | null;
+  setActiveTitle: (title: string | null) => void;
 };
 
 const GlowContext = createContext<GlowContextValue>({
-  glow: null,
-  setGlow: () => {},
+  activeTitle: null,
+  setActiveTitle: () => {},
 });
 
 export function MobileGlowProvider({ children }: { children: ReactNode }) {
-  const [glow, setGlowState] = useState<string | null>(null);
-  const setGlow = useCallback((color: string | null) => {
-    setGlowState(color);
+  const [activeTitle, setActiveTitleState] = useState<string | null>(null);
+  const setActiveTitle = useCallback((title: string | null) => {
+    setActiveTitleState(title);
   }, []);
-  const value = useMemo(() => ({ glow, setGlow }), [glow, setGlow]);
+  const value = useMemo(
+    () => ({ activeTitle, setActiveTitle }),
+    [activeTitle, setActiveTitle]
+  );
 
   return <GlowContext.Provider value={value}>{children}</GlowContext.Provider>;
 }

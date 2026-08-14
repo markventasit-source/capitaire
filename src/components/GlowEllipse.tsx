@@ -6,9 +6,9 @@ type GlowEllipseProps = {
 };
 
 /**
- * Figma "Ellipse 3.png" glow, recolored per card.
+ * Figma "Ellipse 3.png" glow.
  * Uses the PNG alpha as a mask so the soft blur shape stays exact,
- * while `color` tints it (gold / lime / cyan / …).
+ * while `color` tints it.
  */
 export function GlowEllipse({ color, className }: GlowEllipseProps) {
   return (

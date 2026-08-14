@@ -4,7 +4,10 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { GlowEllipse } from "@/components/GlowEllipse";
-import { useMobileGlow } from "@/components/MobileStickyGradient";
+import {
+  SERVICE_GLOW,
+  useMobileGlow,
+} from "@/components/MobileStickyGradient";
 
 export const mobileServiceTitles = [
   "Business Valuations",
@@ -20,72 +23,58 @@ const services = [
     title: mobileServiceTitles[0],
     description:
       "Evaluate business value, financial potential, and growth opportunities.",
-    glow: "#CBA64B",
     icon: "/i1.svg",
   },
   {
     title: mobileServiceTitles[1],
     description:
       "Structure funding, ownership, incentives, and shareholder arrangements.",
-    glow: "#A5CB4B",
     icon: "/i2.svg",
   },
   {
     title: mobileServiceTitles[2],
     description:
       "Optimise business structures for efficiency, compliance, and growth.",
-    glow: "#73CBED",
     icon: "/i3.svg",
   },
   {
     title: mobileServiceTitles[3],
     description:
       "Structure international investments, borrowings, holdings, and transfer pricing.",
-    glow: "#8B7CFF",
     icon: "/i4.svg",
   },
   {
     title: mobileServiceTitles[4],
     description:
       "Strengthen governance, controls, accountability, and business performance.",
-    glow: "#E07A5F",
     icon: "/i5.svg",
   },
   {
     title: mobileServiceTitles[5],
     description:
       "Plan succession, transitions, continuity, and value-preserving exits.",
-    glow: "#5CB87A",
     icon: "/i6.svg",
   },
 ] as const;
 
-function hexToRgb(hex: string) {
-  const value = hex.replace("#", "");
-  return {
-    r: Number.parseInt(value.slice(0, 2), 16),
-    g: Number.parseInt(value.slice(2, 4), 16),
-    b: Number.parseInt(value.slice(4, 6), 16),
-  };
-}
+const GOLD = { r: 203, g: 166, b: 75 };
 
 function ServiceCard({
   service,
 }: {
   service: (typeof services)[number];
 }) {
-  const { glow } = useMobileGlow();
-  const active = glow === service.glow;
-  const { r, g, b } = hexToRgb(service.glow);
+  const { activeTitle } = useMobileGlow();
+  const active = activeTitle === service.title;
 
   return (
-    <article data-glow={service.glow} className="relative bg-transparent">
+    <article data-service-title={service.title} className="relative bg-transparent">
       <GlowEllipse
-        color={service.glow}
+        color={SERVICE_GLOW}
         className="absolute -right-6 -top-14 z-0 h-[260px] w-[112px]"
       />
       <GlowEllipse
-        color={service.glow}
+        color={SERVICE_GLOW}
         className="absolute -bottom-14 -left-6 z-0 h-[260px] w-[112px] rotate-180"
       />
 
@@ -94,10 +83,10 @@ function ServiceCard({
         initial={false}
         animate={{
           borderColor: active
-            ? `rgba(${r}, ${g}, ${b}, 0.95)`
+            ? `rgba(${GOLD.r}, ${GOLD.g}, ${GOLD.b}, 0.95)`
             : "rgba(255, 255, 255, 0.1)",
           boxShadow: active
-            ? `inset 0 1px 0 rgba(255,255,255,0.16), 0 0 0 1px rgba(${r}, ${g}, ${b}, 0.45), 0 10px 32px rgba(${r}, ${g}, ${b}, 0.22)`
+            ? `inset 0 1px 0 rgba(255,255,255,0.16), 0 0 0 1px rgba(${GOLD.r}, ${GOLD.g}, ${GOLD.b}, 0.45), 0 10px 32px rgba(${GOLD.r}, ${GOLD.g}, ${GOLD.b}, 0.22)`
             : "inset 0 1px 0 rgba(255,255,255,0.08)",
         }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -116,7 +105,7 @@ function ServiceCard({
           }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            background: `linear-gradient(165deg, rgba(${r}, ${g}, ${b}, 0.55) 0%, rgba(${r}, ${g}, ${b}, 0.22) 48%, rgba(${r}, ${g}, ${b}, 0.08) 100%)`,
+            background: `linear-gradient(165deg, rgba(${GOLD.r}, ${GOLD.g}, ${GOLD.b}, 0.55) 0%, rgba(${GOLD.r}, ${GOLD.g}, ${GOLD.b}, 0.22) 48%, rgba(${GOLD.r}, ${GOLD.g}, ${GOLD.b}, 0.08) 100%)`,
           }}
         />
 
@@ -142,7 +131,7 @@ function ServiceCard({
 }
 
 export default function MobileServicesCards() {
-  const { setGlow } = useMobileGlow();
+  const { setActiveTitle } = useMobileGlow();
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -150,36 +139,38 @@ export default function MobileServicesCards() {
     if (!section) return;
 
     const compact = window.matchMedia("(max-width: 589px)");
-    const cards = Array.from(section.querySelectorAll<HTMLElement>("[data-glow]"));
+    const cards = Array.from(
+      section.querySelectorAll<HTMLElement>("[data-service-title]")
+    );
     const ratios = new Map<string, number>();
 
-    const pickGlow = () => {
+    const pickActive = () => {
       if (!compact.matches) {
-        setGlow(null);
+        setActiveTitle(null);
         return;
       }
 
-      let bestColor: string | null = null;
+      let bestTitle: string | null = null;
       let bestRatio = 0.18;
 
-      for (const [color, ratio] of ratios) {
+      for (const [title, ratio] of ratios) {
         if (ratio > bestRatio) {
           bestRatio = ratio;
-          bestColor = color;
+          bestTitle = title;
         }
       }
 
-      setGlow(bestColor);
+      setActiveTitle(bestTitle);
     };
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const color = entry.target.getAttribute("data-glow");
-          if (!color) continue;
-          ratios.set(color, entry.isIntersecting ? entry.intersectionRatio : 0);
+          const title = entry.target.getAttribute("data-service-title");
+          if (!title) continue;
+          ratios.set(title, entry.isIntersecting ? entry.intersectionRatio : 0);
         }
-        pickGlow();
+        pickActive();
       },
       {
         threshold: [0, 0.12, 0.24, 0.36, 0.5, 0.65, 0.8, 1],
@@ -188,14 +179,14 @@ export default function MobileServicesCards() {
     );
 
     for (const card of cards) observer.observe(card);
-    compact.addEventListener("change", pickGlow);
+    compact.addEventListener("change", pickActive);
 
     return () => {
       observer.disconnect();
-      compact.removeEventListener("change", pickGlow);
-      setGlow(null);
+      compact.removeEventListener("change", pickActive);
+      setActiveTitle(null);
     };
-  }, [setGlow]);
+  }, [setActiveTitle]);
 
   return (
     <section
