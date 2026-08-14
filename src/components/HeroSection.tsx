@@ -15,10 +15,10 @@ import {
 } from "@/components/ui/motion";
 
 export const mobileHeroTitles = [
-  "Capital Structuring!",
-  "Cross-Border Advisory!",
-  "Business Governance!",
-  "Business Succession!",
+  "Capital Structuring",
+  "Cross-Border Advisory",
+  "Business Governance",
+  "Business Succession",
 ] as const;
 
 const heroCards = [
@@ -51,7 +51,7 @@ function MobileHero() {
         </p>
         <TypingAnimation
           as="h1"
-          words={[...mobileHeroTitles]}
+          words={mobileHeroTitles.map((title) => `${title}!`)}
           delay={400}
           typeSpeed={60}
           deleteSpeed={35}

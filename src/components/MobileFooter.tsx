@@ -114,7 +114,7 @@ export default function MobileFooter() {
       </div>
 
       <p className="border-t border-white/15 py-5 text-center font-[family-name:var(--font-inter)] text-[13px] font-normal leading-none tracking-normal text-white/80">
-        Copyright © 2025 Capitaire. All rights reserved.
+        Copyright © {new Date().getFullYear()} Capitaire. All rights reserved.
       </p>
     </footer>
   );
