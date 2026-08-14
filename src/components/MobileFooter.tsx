@@ -56,8 +56,8 @@ function YouTubeIcon() {
 export default function MobileFooter() {
   return (
     <footer className="relative z-10 hidden w-full bg-transparent px-5 pb-6 pt-4 max-[489px]:block">
-      <div className="grid min-w-0 grid-cols-2 border-t border-white/15">
-        <nav className="flex min-w-0 flex-col gap-5 border-r border-white/15 py-6 pr-3">
+      <div className="grid min-w-0 grid-cols-[0.4fr_0.6fr] border-t border-white/15">
+        <nav className="flex min-w-0 flex-col gap-5 border-r border-white/15 py-6 pr-4">
           {footerLinks.map((link) => (
             <Link
               key={link.href}
@@ -70,7 +70,7 @@ export default function MobileFooter() {
         </nav>
 
         <div className="flex min-w-0 flex-col gap-4 py-6 pl-4">
-          <div className="grid w-full min-w-0 grid-cols-4 gap-1.5">
+          <div className="flex w-full min-w-0 flex-nowrap items-center justify-between">
             {socialLinks.map((social) => (
               <Link
                 key={social.label}
@@ -78,17 +78,17 @@ export default function MobileFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="flex aspect-square w-full items-center justify-center rounded-full border border-[#CBA64B] text-[#CBA64B]"
+                className="flex h-[39px] w-[39px] shrink-0 items-center justify-center rounded-full border border-[#CBA64B] text-[#CBA64B]"
               >
                 <social.icon />
               </Link>
             ))}
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex min-w-0 flex-col gap-2">
             <Link
               href="mailto:info@capitaire.com"
-              className="font-[family-name:var(--font-inter)] text-[16px] font-medium leading-none tracking-normal text-white"
+              className="break-all font-[family-name:var(--font-inter)] text-[16px] font-medium leading-none tracking-normal text-white"
             >
               info@capitaire.com
             </Link>
