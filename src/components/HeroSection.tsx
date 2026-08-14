@@ -1,15 +1,25 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Threads from "@/components/Threads";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { NumberTicker } from "@/components/ui/number-ticker";
+import { TypingAnimation } from "@/components/ui/typing-animation";
+import { ShinyButton } from "@/components/ui/shiny-button";
+import MobileHeroGraphic from "@/components/MobileHeroGraphic";
 import {
   MotionHero,
   MotionItem,
   MotionStagger,
 } from "@/components/ui/motion";
+
+export const mobileHeroTitles = [
+  "Capital Structuring!",
+  "Cross-Border Advisory!",
+  "Business Governance!",
+  "Business Succession!",
+] as const;
 
 const heroCards = [
   { icon: "/growth.png", label: "Grow", alt: "Grow Icon" },
@@ -28,43 +38,75 @@ const metrics = [
 const threadColor: [number, number, number] = [132 / 255, 142 / 255, 163 / 255];
 const threadColorLight: [number, number, number] = [165 / 255, 173 / 255, 188 / 255];
 
-export default function HeroSection() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
+function MobileHero() {
+  return (
+    <section className="relative z-10 hidden min-h-[calc(100dvh-80px-76px)] w-full flex-col items-center justify-center bg-transparent px-6 pb-8 pt-4 text-center max-[489px]:flex">
+      <div className="relative mb-8">
+        <MobileHeroGraphic />
+      </div>
 
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
+      <MotionHero className="flex flex-col items-center mt-12 gap-2" delay={0.12}>
+        <p className="font-sans text-[20px] font-normal leading-[100%] tracking-normal text-white/95">
+          Your Trusted Partner in:
+        </p>
+        <TypingAnimation
+          as="h1"
+          words={[...mobileHeroTitles]}
+          delay={400}
+          typeSpeed={60}
+          deleteSpeed={35}
+          pauseDelay={1400}
+          loop
+          className="min-h-[30px] font-sans text-[30px] font-semibold leading-[100%] tracking-normal text-white"
+        />
+      </MotionHero>
+
+      <MotionHero delay={0.22} className="mt-8">
+        <ShinyButton
+          href="/services"
+          className="rounded-full border-0 bg-[linear-gradient(90deg,#22314C_0%,#2E4470_100%)] px-8 py-3.5 shadow-[0_8px_24px_rgba(0,0,0,0.25)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)] [&>span:first-child]:flex [&>span:first-child]:items-center [&>span:first-child]:gap-2 [&>span:first-child]:font-sans [&>span:first-child]:text-[20px] [&>span:first-child]:font-medium [&>span:first-child]:capitalize [&>span:first-child]:leading-[100%] [&>span:first-child]:tracking-normal [&>span:first-child]:text-white"
+        >
+          Explore Services
+          <Image
+            src="/arrow.svg"
+            alt=""
+            width={20}
+            height={20}
+            className="h-5 w-5 object-contain"
+            aria-hidden
+          />
+        </ShinyButton>
+      </MotionHero>
+    </section>
+  );
+}
+
+function DesktopHero() {
+  const heroRef = useRef<HTMLDivElement>(null);
 
   return (
     <div
       ref={heroRef}
-      className="relative flex w-full max-w-full min-h-[600px] flex-col justify-between overflow-x-clip bg-navy font-sans text-white selection:bg-primary/30"
+      className="relative hidden w-full max-w-full min-h-[600px] flex-col justify-between overflow-x-clip bg-navy font-sans text-white selection:bg-primary/30 min-[490px]:flex"
     >
       <div
         className="pointer-events-none absolute inset-0 z-0 h-full w-full"
         style={{
-          maskImage: isMobile
-            ? "linear-gradient(180deg, black 20%, rgba(0,0,0,0.4) 80%)"
-            : "linear-gradient(315deg, black 20%, rgba(0,0,0,0.5) 70%)",
-          WebkitMaskImage: isMobile
-            ? "linear-gradient(180deg, black 20%, rgba(0,0,0,0.4) 80%)"
-            : "linear-gradient(315deg, black 20%, rgba(0,0,0,0.5) 70%)",
+          maskImage: "linear-gradient(315deg, black 20%, rgba(0,0,0,0.5) 70%)",
+          WebkitMaskImage:
+            "linear-gradient(315deg, black 20%, rgba(0,0,0,0.5) 70%)",
         }}
       >
         <Threads
           color={threadColor}
           colorSecondary={threadColorLight}
-          amplitude={isMobile ? 0.9 : 1.6}
-          distance={isMobile ? 0.5 : 0.8}
-          lineCount={isMobile ? 60 : 180}
-          lineWidth={isMobile ? 3 : 6}
-          lineBlur={isMobile ? 8 : 10}
+          amplitude={1.6}
+          distance={0.8}
+          lineCount={180}
+          lineWidth={6}
+          lineBlur={10}
           patternOffset={0.38}
-          enableMouseInteraction={!isMobile}
+          enableMouseInteraction
           interactionTargetRef={heroRef}
           className="h-full min-h-full w-full"
         />
@@ -104,7 +146,9 @@ export default function HeroSection() {
               <div className="relative h-12 w-12 transition-transform duration-300 group-hover:scale-110 sm:h-[115.5px] sm:w-[115.5px]">
                 <Image src={card.icon} alt={card.alt} fill className="object-contain" />
               </div>
-              <span className="text-[10px] font-bold tracking-widest uppercase sm:text-sm">{card.label}</span>
+              <span className="text-[10px] font-bold tracking-widest uppercase sm:text-sm">
+                {card.label}
+              </span>
             </BlurFade>
           ))}
         </div>
@@ -128,5 +172,14 @@ export default function HeroSection() {
         </MotionStagger>
       </footer>
     </div>
+  );
+}
+
+export default function HeroSection() {
+  return (
+    <>
+      <MobileHero />
+      <DesktopHero />
+    </>
   );
 }

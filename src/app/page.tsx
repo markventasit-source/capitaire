@@ -1,4 +1,10 @@
 import HeroSection from "@/components/HeroSection";
+import MobileServicesCards from "@/components/MobileServicesCards";
+import MobileStatsGrid from "@/components/MobileStatsGrid";
+import MobileClientsGrid from "@/components/MobileClientsGrid";
+import MobileBlogsGrid from "@/components/MobileBlogsGrid";
+import MobileFaqs from "@/components/MobileFaqs";
+import MobileFooter from "@/components/MobileFooter";
 import QuestionsTimeline from "@/components/QuestionsTimeline";
 import AdvisoryServicesTabs from "@/components/AdvisoryServicesTabs";
 import ReadinessLens from "@/components/ReadinessLens";
@@ -12,14 +18,23 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <QuestionsTimeline />
-      <AdvisoryServicesTabs />
-      <ReadinessLens />
-      <WhyCapitaireGrid />
-      <CommonQuestions />
-      <ClientsGrid />
-      <CtaSection />
-      <FooterSection />
+      <MobileServicesCards />
+      <MobileStatsGrid />
+      <MobileClientsGrid />
+      <MobileBlogsGrid />
+      <MobileFaqs />
+      <MobileFooter />
+      {/* Desktop sections — hidden on compact mobile so sticky hero bg stays visible */}
+      <div className="max-[489px]:hidden">
+        <QuestionsTimeline />
+        <AdvisoryServicesTabs />
+        <ReadinessLens />
+        <WhyCapitaireGrid />
+        <CommonQuestions />
+        <ClientsGrid />
+        <CtaSection />
+        <FooterSection />
+      </div>
     </>
   );
 }

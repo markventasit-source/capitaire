@@ -25,7 +25,7 @@ const promisePoints = [
   "Built for valuation, funding, governance, and succession",
 ];
 
-const faqItems: FaqItem[] = [
+export const faqItems: FaqItem[] = [
   {
     question: "We already have a CA firm. Why do we need CAPITAIRE?",
     answer:

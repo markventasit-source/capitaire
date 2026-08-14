@@ -84,6 +84,41 @@
   --radius-4xl: calc(var(--radius) * 2.6);
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-blink-cursor: blink-cursor 1.2s step-end infinite;
+  @keyframes blink-cursor {
+  0%, 49% {
+    opacity: 1;
+    }
+  50%, 100% {
+    opacity: 0;
+    }
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+
+@utility animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 1rem)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap, 1rem)));
+  }
 }
 
 html {

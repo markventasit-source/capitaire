@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
@@ -20,6 +20,13 @@ const navItems = [
   { label: "BLOG", href: "/blog" },
 ] as const;
 
+const compactMenuItems = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact Us", href: "/contact" },
+] as const;
+
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   return pathname.startsWith(href);
@@ -28,6 +35,9 @@ function isActive(pathname: string, href: string) {
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [atTop, setAtTop] = useState(true);
+  const lastY = useRef(0);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -40,9 +50,60 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    const compact = window.matchMedia("(max-width: 489px)");
+
+    const onScroll = () => {
+      if (!compact.matches) {
+        setHidden(false);
+        setAtTop(true);
+        return;
+      }
+
+      const y = window.scrollY;
+      const isTop = y < 24;
+      setAtTop(isTop);
+
+      if (mobileOpen || isTop) {
+        setHidden(false);
+        lastY.current = y;
+        return;
+      }
+
+      if (y > lastY.current + 8 && y > 72) {
+        setHidden(true);
+      } else if (y < lastY.current - 8) {
+        setHidden(false);
+      }
+
+      lastY.current = y;
+    };
+
+    lastY.current = window.scrollY;
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    compact.addEventListener("change", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      compact.removeEventListener("change", onScroll);
+    };
+  }, [mobileOpen]);
+
+  const solid = !atTop;
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-navy">
-      <nav className="site-container relative flex h-[88px] items-center justify-between">
+    <>
+    <motion.header
+      animate={{ y: hidden ? "-100%" : 0 }}
+      transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 bg-navy transition-colors duration-300",
+        atTop
+          ? "max-[489px]:bg-transparent"
+          : "max-[489px]:bg-white max-[489px]:shadow-[0_8px_28px_rgba(11,18,32,0.12)]"
+      )}
+    >
+      <nav className="site-container relative flex h-[88px] items-center justify-between max-[489px]:h-[96px] max-[489px]:items-end max-[489px]:px-5 max-[489px]:pb-3 max-[489px]:pt-6">
         <MotionHero className="shrink-0">
           <Link href="/" className="block">
             <Image
@@ -51,7 +112,7 @@ export default function Navbar() {
               width={180}
               height={48}
               priority
-              className="h-auto w-[140px] sm:w-[180px]"
+              className="h-auto w-[140px] max-[489px]:w-[168px] sm:w-[180px]"
             />
           </Link>
         </MotionHero>
@@ -80,7 +141,7 @@ export default function Navbar() {
 
           <ShinyButton
             href="/contact"
-            className="hidden shrink-0 rounded-md border-0 bg-[linear-gradient(90deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] px-5 py-3 shadow-none hover:shadow-none sm:inline-flex dark:hover:shadow-none [&>span:first-child]:text-[15px] [&>span:first-child]:font-semibold [&>span:first-child]:leading-none [&>span:first-child]:text-white [&>span:first-child]:uppercase [&>span:first-child]:tracking-normal"
+            className="hidden shrink-0 rounded-md border-0 bg-[linear-gradient(90deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] px-5 py-3 shadow-none hover:shadow-none max-[489px]:!hidden sm:inline-flex dark:hover:shadow-none [&>span:first-child]:text-[15px] [&>span:first-child]:font-semibold [&>span:first-child]:leading-none [&>span:first-child]:text-white [&>span:first-child]:uppercase [&>span:first-child]:tracking-normal"
           >
             Talk to Us
           </ShinyButton>
@@ -90,9 +151,27 @@ export default function Navbar() {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((open) => !open)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 lg:hidden"
+            className={cn(
+              "inline-flex h-10 w-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 max-[489px]:h-11 max-[489px]:w-11 max-[489px]:rounded-full max-[489px]:border-0 max-[489px]:text-[#CBA64B] lg:hidden",
+              solid
+                ? "max-[489px]:bg-[#1A2334] max-[489px]:shadow-none max-[489px]:hover:bg-[#121A2A]"
+                : "max-[489px]:bg-[linear-gradient(145deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.06)_100%)] max-[489px]:shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] max-[489px]:hover:bg-[linear-gradient(145deg,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0.08)_100%)]"
+            )}
           >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <>
+                <span
+                  className="hidden flex-col items-end gap-[5px] max-[489px]:flex"
+                  aria-hidden
+                >
+                  <span className="block h-[1.5px] w-[11px] rounded-full bg-current" />
+                  <span className="block h-[1.5px] w-5 rounded-full bg-current" />
+                </span>
+                <Menu className="h-6 w-6 max-[489px]:hidden" />
+              </>
+            )}
           </button>
         </MotionHero>
       </nav>
@@ -100,12 +179,12 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            key="mobile-menu"
+            key="tablet-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-x-0 top-[88px] z-40 overflow-hidden border-t border-white/10 bg-navy lg:hidden"
+            className="fixed inset-x-0 top-[88px] z-40 hidden overflow-hidden border-t border-white/10 bg-navy min-[490px]:block lg:hidden"
           >
             <motion.ul
               initial="hidden"
@@ -166,20 +245,107 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.button
-            key="mobile-backdrop"
+            key="tablet-backdrop"
             type="button"
             aria-label="Close menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 top-[88px] z-30 bg-black/40 lg:hidden"
+            className="fixed inset-0 top-[88px] z-30 hidden bg-black/40 min-[490px]:block lg:hidden"
             onClick={() => setMobileOpen(false)}
           />
         )}
       </AnimatePresence>
 
-      <ScrollProgress placement="bottom" />
-    </header>
+      <div className="max-[489px]:hidden">
+        <ScrollProgress placement="bottom" />
+      </div>
+    </motion.header>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            key="compact-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[60] hidden h-dvh flex-col bg-[#1A2334] px-5 max-[489px]:flex"
+          >
+            <div className="flex h-[96px] items-end justify-between pb-3 pt-6">
+              <Link href="/" onClick={() => setMobileOpen(false)} className="block">
+                <Image
+                  src="/logo.png"
+                  alt="Capitaire - Integrated Value Delivery"
+                  width={168}
+                  height={45}
+                  className="h-auto w-[168px]"
+                />
+              </Link>
+              <button
+                type="button"
+                aria-label="Close menu"
+                onClick={() => setMobileOpen(false)}
+                className="flex h-11 w-11 items-center justify-center text-[#CBA64B]"
+              >
+                <X className="h-7 w-7" strokeWidth={1.6} />
+              </button>
+            </div>
+
+            <motion.ul
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.07, delayChildren: 0.12 } },
+              }}
+              className="flex flex-1 flex-col gap-8 pt-14"
+            >
+              {compactMenuItems.map((item) => {
+                const active = isActive(pathname, item.href);
+
+                return (
+                  <motion.li
+                    key={item.href}
+                    variants={{
+                      hidden: { opacity: 0, y: 12 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        "font-[family-name:var(--font-inter)] text-[21px] font-normal leading-none tracking-normal",
+                        active ? "text-[#CBA64B]" : "text-[#A5ADBC]"
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.li>
+                );
+              })}
+            </motion.ul>
+
+            <div className="border-t border-white/15 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-6">
+              <p className="font-[family-name:var(--font-inter)] text-[13px] font-medium leading-none tracking-normal text-[#CBA64B]">
+                General Inquiries
+              </p>
+              <Link
+                href="mailto:info@capitaire.com"
+                className="mt-3 block font-[family-name:var(--font-inter)] text-[20px] font-medium leading-none tracking-normal text-white"
+              >
+                info@capitaire.com
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
