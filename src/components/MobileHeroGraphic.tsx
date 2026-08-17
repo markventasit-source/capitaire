@@ -32,7 +32,7 @@ export default function MobileHeroGraphic() {
       onPointerMove={onPointerMove}
       onPointerLeave={resetTilt}
       onPointerUp={resetTilt}
-      className="relative h-[260px] w-[260px]"
+      className="relative h-[219px] w-[219px]"
       style={{ perspective: 900 }}
     >
       <motion.div
