@@ -69,7 +69,7 @@ export default function MobileFooter() {
           ))}
         </nav>
 
-        <div className="flex min-h-full min-w-0 flex-col justify-between py-6 pl-4">
+        <div className="flex min-h-full min-w-0 flex-col justify-between py-6 pl-6">
           <div className="flex w-full min-w-0 flex-nowrap items-center justify-between">
             {socialLinks.map((social) => (
               <Link
