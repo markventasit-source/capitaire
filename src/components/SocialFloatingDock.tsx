@@ -7,22 +7,22 @@ const socialLinks = [
   {
     title: "Instagram",
     href: "https://instagram.com",
-    icon: "/instagram.png",
+    icon: "/instagram.svg",
   },
   {
     title: "LinkedIn",
     href: "https://linkedin.com",
-    icon: "/linkedin.png",
+    icon: "/linkedin.svg",
   },
   {
     title: "Facebook",
     href: "https://facebook.com",
-    icon: "/facebook.png",
+    icon: "/facebook.svg",
   },
   {
     title: "YouTube",
     href: "https://youtube.com",
-    icon: "/youtube.png",
+    icon: "/yt.svg",
   },
 ] as const;
 
