@@ -69,7 +69,7 @@ export default function MobileFooter() {
           ))}
         </nav>
 
-        <div className="flex min-w-0 flex-col gap-4 py-6 pl-4">
+        <div className="flex min-h-full min-w-0 flex-col justify-between py-6 pl-4">
           <div className="flex w-full min-w-0 flex-nowrap items-center justify-between">
             {socialLinks.map((social) => (
               <Link
@@ -85,20 +85,18 @@ export default function MobileFooter() {
             ))}
           </div>
 
-          <div className="flex min-w-0 flex-col gap-2">
-            <Link
-              href="mailto:info@capitaire.com"
-              className="break-all font-[family-name:var(--font-inter)] text-[16px] font-medium leading-none tracking-normal text-white"
-            >
-              info@capitaire.com
-            </Link>
-            <Link
-              href="tel:+917907267290"
-              className="font-[family-name:var(--font-inter)] text-[16px] font-medium leading-none tracking-normal text-white"
-            >
-              +91 79072 67290
-            </Link>
-          </div>
+          <Link
+            href="mailto:info@capitaire.com"
+            className="break-all font-[family-name:var(--font-inter)] text-[16px] font-medium leading-none tracking-normal text-white"
+          >
+            info@capitaire.com
+          </Link>
+          <Link
+            href="tel:+917907267290"
+            className="font-[family-name:var(--font-inter)] text-[16px] font-medium leading-none tracking-normal text-white"
+          >
+            +91 79072 67290
+          </Link>
         </div>
       </div>
 
