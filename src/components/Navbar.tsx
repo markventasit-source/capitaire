@@ -103,7 +103,7 @@ export default function Navbar() {
           : "max-[589px]:bg-white max-[589px]:shadow-[0_8px_28px_rgba(11,18,32,0.12)]"
       )}
     >
-      <nav className="site-container relative flex h-[88px] items-center justify-between max-[589px]:h-[96px] max-[589px]:items-end max-[589px]:px-5 max-[589px]:pb-3 max-[589px]:pt-6">
+      <nav className="site-container relative flex h-[88px] items-center justify-between max-[589px]:h-[80px] max-[589px]:items-end max-[589px]:px-5 max-[589px]:pb-3 max-[589px]:pt-3">
         <MotionHero className="shrink-0">
           <Link href="/" className="block">
             <Image
@@ -276,7 +276,7 @@ export default function Navbar() {
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[60] hidden h-dvh flex-col bg-[#1A2334] px-5 max-[589px]:flex"
           >
-            <div className="flex h-[96px] items-end justify-between pb-3 pt-6">
+            <div className="flex h-[80px] items-end justify-between pb-3 pt-3">
               <Link href="/" onClick={() => setMobileOpen(false)} className="block">
                 <Image
                   src="/logo.png"

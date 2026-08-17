@@ -39,7 +39,7 @@ export default function RootLayout({
         <MobileGlowProvider>
           <MobileStickyGradient />
           <Navbar />
-          <main className="no-scrollbar relative z-10 flex-1 overflow-x-clip bg-transparent pt-[88px] max-[589px]:pt-[96px] max-[589px]:pb-[88px]">
+          <main className="no-scrollbar relative z-10 flex-1 overflow-x-clip bg-transparent pt-[88px] max-[589px]:pt-[80px] max-[589px]:pb-[88px]">
             {children}
           </main>
           <SocialFloatingDock />
