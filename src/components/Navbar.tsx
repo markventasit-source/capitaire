@@ -332,9 +332,9 @@ export default function Navbar() {
               })}
             </motion.ul>
 
-            <div className="border-t border-white/15 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-6">
+            <div className="border-t border-white/15 pb-[max(4.5rem,calc(3rem+env(safe-area-inset-bottom)))] pt-6">
               <p className="font-[family-name:var(--font-inter)] text-[13px] font-medium leading-none tracking-normal text-[#CBA64B]">
-                General Inquiries
+                General Enquiries
               </p>
               <Link
                 href="mailto:info@capitaire.com"
