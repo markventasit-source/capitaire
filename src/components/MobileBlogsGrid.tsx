@@ -62,7 +62,7 @@ function ReadMoreArrow() {
 export default function MobileBlogsGrid() {
   return (
     <section className="relative z-10 hidden w-full bg-transparent pb-12 pt-4 max-[589px]:block">
-      <Marquee className="w-full overflow-hidden p-0 [--duration:18s] [--gap:1.25rem]">
+      <Marquee className="w-full overflow-hidden p-0 [--duration:28s] [--gap:1.25rem]">
         {mobileHeroTitles.map((item) => (
           <span
             key={item}
