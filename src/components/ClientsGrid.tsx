@@ -1,28 +1,26 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { MotionFade, MotionSection } from "@/components/ui/motion";
-import {
-  ClientLogoCell,
-  useRandomClientLogos,
-} from "@/components/ClientLogoRotator";
-import { cn } from "@/lib/utils";
 
-const VISIBLE_COUNT = 12;
-const PAGE_COUNT = 4;
-const DOT_INTERVAL_MS = 6500;
+const DESKTOP_VISIBLE_COUNT = 15;
+const clientLogos = [
+  "/c1.jpg",
+  "/c2.png",
+  "/c3.png",
+  "/c4.jpg",
+  "/c5.jpg",
+  "/c6.png",
+  "/c7.png",
+  "/c8.jpg",
+  "/c9.png",
+  "/c10.png",
+  "/c11.png",
+  "/c12.png",
+  "/c13.jpg",
+  "/c14.png",
+  "/c15.png",
+] as const;
 
 export default function ClientsGrid() {
-  const logos = useRandomClientLogos(VISIBLE_COUNT);
-  const [activeDot, setActiveDot] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveDot((current) => (current + 1) % PAGE_COUNT);
-    }, DOT_INTERVAL_MS);
-
-    return () => window.clearInterval(timer);
-  }, []);
+  const logos = clientLogos.slice(0, DESKTOP_VISIBLE_COUNT);
 
   return (
     <MotionSection className="site-container w-full bg-white py-20 font-sans text-[#1A2334]">
@@ -43,26 +41,29 @@ export default function ClientsGrid() {
       </div>
 
       <div className="overflow-hidden rounded-sm border-l border-t border-[#E8DDC3] bg-white">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           {logos.map((logo, index) => (
-            <ClientLogoCell
+            <div
               key={index}
-              logo={logo}
               className="h-[110px] border-r border-b border-[#E8DDC3] px-6 py-5"
-              imageClassName="max-h-[54px] max-w-[140px] object-contain"
-            />
+            >
+              <img
+                src={logo}
+                alt="Client logo"
+                className="max-h-[54px] max-w-[140px] object-contain"
+              />
+            </div>
           ))}
         </div>
       </div>
 
       <MotionFade className="mt-6 flex items-center justify-center gap-2" delay={0.2}>
-        {Array.from({ length: PAGE_COUNT }, (_, dot) => (
+        {Array.from({ length: 4 }, (_, dot) => (
           <span
             key={dot}
-            className={cn(
-              "h-2 w-2 rounded-full transition-colors duration-300",
-              dot === activeDot ? "bg-[#1A2334]" : "bg-[#D9D9D9]"
-            )}
+            className={`h-2 w-2 rounded-full ${
+              dot === 0 ? "bg-[#1A2334]" : "bg-[#D9D9D9]"
+            }`}
           />
         ))}
       </MotionFade>
