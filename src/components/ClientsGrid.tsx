@@ -45,12 +45,12 @@ export default function ClientsGrid() {
           {logos.map((logo, index) => (
             <div
               key={index}
-              className="h-[110px] border-r border-b border-[#E8DDC3] px-6 py-5"
+              className="flex h-[110px] items-center justify-center border-r border-b border-[#E8DDC3] px-6 py-5"
             >
               <img
                 src={logo}
                 alt="Client logo"
-                className="max-h-[54px] max-w-[140px] object-contain"
+                className="block h-auto max-h-[54px] w-auto max-w-[140px] object-contain"
               />
             </div>
           ))}

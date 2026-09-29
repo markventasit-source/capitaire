@@ -18,7 +18,7 @@ interface FaqItem {
   answer: string;
 }
 
-const promisePoints = [
+export const promisePoints = [
   "Free initial discovery conversation",
   "Experience across 26+ industries",
   "Support for Kerala businesses and NRI-linked capital",
