@@ -258,9 +258,11 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      <div className="max-[589px]:hidden">
-        <ScrollProgress placement="bottom" />
-      </div>
+      {pathname === "/" && (
+        <div className="max-[589px]:hidden">
+          <ScrollProgress placement="bottom" />
+        </div>
+      )}
     </motion.header>
 
       <AnimatePresence>
@@ -332,7 +334,7 @@ export default function Navbar() {
               })}
             </motion.ul>
 
-            <div className="border-t border-white/15 pb-[max(4.5rem,calc(3rem+env(safe-area-inset-bottom)))] pt-6 pr-5">
+            <div className="border-t border-white/15 pb-[max(4.5rem,calc(3rem+env(safe-area-inset-bottom)))] pt-6">
               <p className="font-[family-name:var(--font-inter)] text-[13px] font-medium leading-none tracking-normal text-[#CBA64B]">
                 General Enquiries
               </p>
