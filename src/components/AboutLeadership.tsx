@@ -26,7 +26,7 @@ export default function AboutLeadership() {
           />
           <MotionFade className="relative" delay={0.1}>
             <Image
-              src="/team.png"
+              src="/Teams.png"
               alt="The CAPITAIRE team standing together on stage"
               width={1320}
               height={403}

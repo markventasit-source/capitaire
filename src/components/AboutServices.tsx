@@ -314,9 +314,6 @@ function PinnedServices() {
   const metricsRef = useRef<ScrollMetrics | null>(null);
   const reduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
-  const slideProgress = useMotionValue(0);
-  const imageY = useTransform(slideProgress, [0, 1], ["-5%", "5%"]);
-
   const goTo = useCallback((index: number) => {
     if (index === activeRef.current) return;
     setSlideState({ active: index, direction: index > activeRef.current ? 1 : -1 });
@@ -355,11 +352,10 @@ function PinnedServices() {
 
     const bounded = clamp(position, 0, slides.length - 0.0001);
     const index = Math.floor(bounded);
-    slideProgress.set(bounded - index);
     setTarget(index);
     // Off-screen jumps (reloads, anchor links) settle instantly instead of walking.
     if (!engaged) goTo(index);
-  }, [goTo, slideProgress]);
+  }, [goTo]);
 
   useEffect(() => {
     if (active === target) return;
@@ -469,11 +465,7 @@ function PinnedServices() {
                   exit="exit"
                   className="origin-top [grid-area:1/1]"
                 >
-                  <SlideContent
-                    slide={slide}
-                    animated={!reduceMotion}
-                    imageY={reduceMotion ? undefined : imageY}
-                  />
+                  <SlideContent slide={slide} animated={!reduceMotion} />
                 </motion.div>
               </AnimatePresence>
             </div>
