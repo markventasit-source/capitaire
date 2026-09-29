@@ -178,6 +178,30 @@ body::-webkit-scrollbar {
   padding-right: 1.5rem;
 }
 
+.contact-phone-input {
+  --PhoneInputCountrySelectArrow-color: #a5adbc;
+  --PhoneInputCountrySelectArrow-opacity: 1;
+  --PhoneInputCountryFlag-borderColor: transparent;
+  --PhoneInput-color--focus: #cba64b;
+}
+
+.contact-phone-input .PhoneInputInput {
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-phone-input .PhoneInputInput::placeholder {
+  color: #848ea3;
+}
+
+.contact-phone-input .PhoneInputCountrySelect option {
+  color: #1a2334;
+}
+
 .text-gradient-primary {
   display: inline-block;
   width: fit-content;

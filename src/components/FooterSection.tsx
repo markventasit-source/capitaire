@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
 import {
   MotionFade,
   MotionItem,
@@ -35,15 +36,6 @@ const contactItems = [
     href: "tel:+917907267290",
   },
 ] as const;
-
-const capitalNeeds = [
-  "Business valuation",
-  "Fundraising readiness",
-  "Capital structuring",
-  "Entity structuring",
-  "Cross-border advisory",
-  "Governance and succession",
-];
 
 export default function FooterSection() {
   return (
@@ -102,101 +94,7 @@ export default function FooterSection() {
         </MotionFade>
 
         <MotionScale className="lg:col-span-7" delay={0.1}>
-          <form className="rounded-sm border border-white/10 bg-[#1F293D] p-6 md:p-8">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <label className="flex flex-col gap-2">
-                <span className="text-[14px] font-normal leading-5 text-[#A5ADBC]">
-                  Your Name
-                </span>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="John Doe"
-                  className="rounded-sm border border-white/10 bg-[#1A2334] px-4 py-3 text-[14px] text-white outline-none placeholder:text-[#848EA3] focus:border-[#cba64b]/50"
-                />
-              </label>
-
-              <label className="flex flex-col gap-2">
-                <span className="text-[14px] font-normal leading-5 text-[#A5ADBC]">
-                  Business Name
-                </span>
-                <input
-                  type="text"
-                  name="businessName"
-                  placeholder="Choose one..."
-                  className="rounded-sm border border-white/10 bg-[#1A2334] px-4 py-3 text-[14px] text-white outline-none placeholder:text-[#848EA3] focus:border-[#cba64b]/50"
-                />
-              </label>
-
-              <label className="flex flex-col gap-2">
-                <span className="text-[14px] font-normal leading-5 text-[#A5ADBC]">
-                  Email
-                </span>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="johndoe@testmail.com"
-                  className="rounded-sm border border-white/10 bg-[#1A2334] px-4 py-3 text-[14px] text-white outline-none placeholder:text-[#848EA3] focus:border-[#cba64b]/50"
-                />
-              </label>
-
-              <label className="flex flex-col gap-2">
-                <span className="text-[14px] font-normal leading-5 text-[#A5ADBC]">
-                  Phone
-                </span>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="+91 9995 1235 4565"
-                  className="rounded-sm border border-white/10 bg-[#1A2334] px-4 py-3 text-[14px] text-white outline-none placeholder:text-[#848EA3] focus:border-[#cba64b]/50"
-                />
-              </label>
-
-              <label className="flex flex-col gap-2 md:col-span-2">
-                <span className="text-[14px] font-normal leading-5 text-[#A5ADBC]">
-                  Capital Need
-                </span>
-                <select
-                  name="capitalNeed"
-                  defaultValue="Business valuation"
-                  className="rounded-sm border border-white/10 bg-[#1A2334] px-4 py-3 text-[14px] text-white outline-none focus:border-[#cba64b]/50"
-                >
-                  {capitalNeeds.map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
-
-              <label className="flex flex-col gap-2 md:col-span-2">
-                <span className="text-[14px] font-normal leading-5 text-[#A5ADBC]">
-                  Context
-                </span>
-                <textarea
-                  name="context"
-                  rows={4}
-                  placeholder="A short note about your current situation"
-                  className="resize-none rounded-sm border border-white/10 bg-[#1A2334] px-4 py-3 text-[14px] text-white outline-none placeholder:text-[#848EA3] focus:border-[#cba64b]/50"
-                />
-              </label>
-            </div>
-
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <button
-                type="submit"
-                className="rounded-sm bg-[linear-gradient(90deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-opacity hover:opacity-90"
-              >
-                Send Enquiry
-              </button>
-              <Link
-                href="mailto:info@capitaire.com"
-                className="inline-flex items-center justify-center rounded-sm border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:border-white hover:bg-white/5"
-              >
-                Email Directly
-              </Link>
-            </div>
-          </form>
+          <ContactForm />
         </MotionScale>
       </div>
 

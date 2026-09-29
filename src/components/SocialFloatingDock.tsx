@@ -17,7 +17,7 @@ const socialLinks = [
   {
     title: "Facebook",
     href: "https://facebook.com",
-    icon: "/facebook.svg",
+    icon: "/fb.png",
   },
   {
     title: "YouTube",
