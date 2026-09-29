@@ -54,7 +54,7 @@ export default function AboutStory() {
 
           <MotionFade delay={0.15} className="mt-10 md:mt-12">
             <Image
-              src="/about.png"
+              src="/abt.png"
               alt="Capitaire founders in a client advisory meeting"
               width={1203}
               height={410}
