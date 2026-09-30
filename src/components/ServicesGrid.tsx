@@ -14,7 +14,7 @@ export default function ServicesGrid() {
             className="group flex scroll-mt-28 items-center gap-4 rounded-[4px] bg-white p-5 transition-colors duration-300 hover:bg-[#CBA64B] focus-within:bg-[#CBA64B] md:gap-6 md:p-7"
           >
             <div className="flex min-w-0 flex-1 flex-col items-start">
-              <span className="flex h-10 w-10 items-center justify-center rounded-[4px] bg-[linear-gradient(135deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] ring-1 ring-transparent transition-shadow duration-300 group-hover:ring-white/80 group-focus-within:ring-white/80">
+              <span className="flex h-12 w-12 items-center justify-center rounded-[4px] bg-[#CBA64B] [clip-path:polygon(0_0,72%_0,100%_28%,100%_100%,28%_100%,0_72%)]">
                 <Image
                   src={service.icon}
                   alt=""
