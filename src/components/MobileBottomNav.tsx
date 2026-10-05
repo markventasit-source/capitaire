@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const bottomLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "About Us", href: "/capital-advisory/about" },
+  { label: "Services", href: "/capital-advisory/services" },
+  { label: "Contact Us", href: "/capital-advisory/contact" },
 ] as const;
 
 export default function MobileBottomNav() {
@@ -22,7 +22,7 @@ export default function MobileBottomNav() {
       <div className="relative mx-auto flex items-center gap-3 overflow-hidden rounded-t-[28px] border border-white/15 border-b-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.04)_28%,rgba(31,43,66,0.28)_100%)] px-4 py-3.5 shadow-[0_-10px_40px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.28)] backdrop-blur-2xl backdrop-saturate-200 supports-[backdrop-filter]:bg-[linear-gradient(180deg,rgba(255,255,255,0.12)_0%,rgba(31,43,66,0.22)_100%)]">
   
         <Link
-          href="/"
+          href="/capital-advisory"
           aria-label="Home"
           className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#CBA64B]/90 shadow-[0_2px_12px_rgba(203,166,75,0.4)] backdrop-blur-md transition-opacity hover:opacity-90"
         >

@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "/about" },
-  { label: "SERVICES", href: "/services" },
-  { label: "CONTACT US", href: "/contact" },
+  { label: "HOME", href: "/capital-advisory" },
+  { label: "ABOUT US", href: "/capital-advisory/about" },
+  { label: "SERVICES", href: "/capital-advisory/services" },
+  { label: "CONTACT US", href: "/capital-advisory/contact" },
 ] as const;
 
 const socialLinks = [

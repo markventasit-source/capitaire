@@ -63,7 +63,7 @@ function MobileHero() {
 
       <MotionHero delay={0.22} className="mt-8">
         <ShinyButton
-          href="/services"
+          href="/capital-advisory/services"
           className="rounded-full border-0 bg-[linear-gradient(90deg,#22314C_0%,#2E4470_100%)] px-8 py-5 shadow-[0_8px_24px_rgba(0,0,0,0.25)] backdrop-blur-none hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)] dark:bg-[linear-gradient(90deg,#22314C_0%,#2E4470_100%)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)] [&>span:first-child]:flex [&>span:first-child]:items-center [&>span:first-child]:gap-2 [&>span:first-child]:font-sans [&>span:first-child]:text-[20px] [&>span:first-child]:font-medium [&>span:first-child]:capitalize [&>span:first-child]:leading-[100%] [&>span:first-child]:tracking-normal [&>span:first-child]:text-white [&>span:last-child]:hidden"
         >
           Explore Services

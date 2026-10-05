@@ -11,24 +11,26 @@ import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { MotionHero } from "@/components/ui/motion";
 import { cn } from "@/lib/utils";
 
+const HOME = "/capital-advisory";
+
 const navItems = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "/about" },
-  { label: "QUESTIONS", href: "/questions" },
-  { label: "SERVICES", href: "/services" },
-  { label: "PROCESS", href: "/process" },
-  { label: "BLOG", href: "/blog" },
+  { label: "HOME", href: HOME },
+  { label: "ABOUT US", href: `${HOME}/about` },
+  { label: "QUESTIONS", href: `${HOME}/questions` },
+  { label: "SERVICES", href: `${HOME}/services` },
+  { label: "PROCESS", href: `${HOME}/process` },
+  { label: "BLOG", href: `${HOME}/blog` },
 ] as const;
 
 const compactMenuItems = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Home", href: HOME },
+  { label: "About Us", href: `${HOME}/about` },
+  { label: "Services", href: `${HOME}/services` },
+  { label: "Contact Us", href: `${HOME}/contact` },
 ] as const;
 
 function isActive(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
+  if (href === HOME) return pathname === HOME;
   return pathname.startsWith(href);
 }
 
@@ -105,7 +107,7 @@ export default function Navbar() {
     >
       <nav className="site-container relative flex h-[88px] items-center justify-between max-[589px]:h-[80px] max-[589px]:items-end max-[589px]:px-5 max-[589px]:pb-3 max-[589px]:pt-3">
         <MotionHero className="shrink-0">
-          <Link href="/" className="block">
+          <Link href={HOME} className="block">
             <Image
               src="/logo.png"
               alt="Capitaire - Integrated Value Delivery"
@@ -140,7 +142,7 @@ export default function Navbar() {
           </ul>
 
           <ShinyButton
-            href="/contact"
+            href={`${HOME}/contact`}
             className="hidden shrink-0 rounded-md border-0 bg-[linear-gradient(90deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] px-5 py-3 shadow-none hover:shadow-none max-[589px]:!hidden sm:inline-flex dark:hover:shadow-none [&>span:first-child]:text-[15px] [&>span:first-child]:font-semibold [&>span:first-child]:leading-none [&>span:first-child]:text-white [&>span:first-child]:uppercase [&>span:first-child]:tracking-normal"
           >
             Talk to Us
@@ -231,7 +233,7 @@ export default function Navbar() {
               className="site-container border-t border-white/10 px-3 py-6"
             >
               <ShinyButton
-                href="/contact"
+                href={`${HOME}/contact`}
                 onClick={() => setMobileOpen(false)}
                 className="w-full justify-center rounded-md border-0 bg-[linear-gradient(90deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] px-5 py-3 shadow-none hover:shadow-none dark:hover:shadow-none [&>span:first-child]:text-[15px] [&>span:first-child]:font-semibold [&>span:first-child]:leading-none [&>span:first-child]:text-white [&>span:first-child]:uppercase [&>span:first-child]:tracking-normal"
               >
@@ -258,7 +260,7 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {pathname === "/" && (
+      {pathname === HOME && (
         <div className="max-[589px]:hidden">
           <ScrollProgress placement="bottom" />
         </div>
@@ -279,7 +281,7 @@ export default function Navbar() {
             className="fixed inset-0 z-[60] hidden h-dvh flex-col bg-[#1A2334] px-5 max-[589px]:flex"
           >
             <div className="flex h-[80px] items-end justify-between pb-3 pt-3">
-              <Link href="/" onClick={() => setMobileOpen(false)} className="block">
+              <Link href={HOME} onClick={() => setMobileOpen(false)} className="block">
                 <Image
                   src="/logo.png"
                   alt="Capitaire - Integrated Value Delivery"

@@ -35,7 +35,7 @@ export default function ServicesGrid() {
               </p>
 
               <Link
-                href={service.detail ? `/services/${service.slug}` : `#${service.slug}`}
+                href={service.detail ? `/capital-advisory/services/${service.slug}` : `#${service.slug}`}
                 className="mt-8 inline-flex items-center rounded-[2px] bg-[linear-gradient(90deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] px-4 py-3 font-[family-name:var(--font-inter)] text-[12px] font-medium uppercase leading-none tracking-wide text-white transition-colors duration-300 group-hover:bg-none group-hover:bg-white group-hover:text-[#1A2334] group-focus-within:bg-none group-focus-within:bg-white group-focus-within:text-[#1A2334] md:mt-10 md:px-5 md:text-[13px]"
               >
                 Explore Services

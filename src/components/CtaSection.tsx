@@ -53,7 +53,7 @@ export default function CtaSection() {
 
           <MotionFade delay={0.35}>
             <Link
-              href="/contact"
+              href="/capital-advisory/contact"
               className="mt-2 inline-block rounded-sm bg-[#1A2334] px-8 py-3 text-sm font-medium uppercase tracking-wider text-white transition-colors hover:bg-[#1A2334]/90"
             >
               Start the Conversation

@@ -27,7 +27,7 @@ function getPageItems(current: number, total: number): (number | "ellipsis")[] {
   return items;
 }
 
-const pageHref = (page: number) => (page === 1 ? "/blog" : `/blog?page=${page}`);
+const pageHref = (page: number) => (page === 1 ? "/capital-advisory/blog" : `/capital-advisory/blog?page=${page}`);
 
 export default function BlogGrid({ posts, page, totalPages }: BlogGridProps) {
   const circle =

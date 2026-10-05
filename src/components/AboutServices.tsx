@@ -37,7 +37,7 @@ const slides: readonly Slide[] = [
     title: "Business Valuations",
     intro:
       "Every business is in a unique position in the market. Financial reports, customer feedback, and shareholders' insights tell a different story.",
-    href: "/services/business-valuations",
+    href: "/capital-advisory/services/business-valuations",
     image: "/aboutsection.png",
     imageAlt:
       "Valuation reports, a laptop with charts, and a model building on a desk",
@@ -68,7 +68,7 @@ const slides: readonly Slide[] = [
     title: "Capital Structuring",
     intro:
       "The right capital structure balances growth, control, and risk. We help you raise and organise capital in a way that supports your long-term plans.",
-    href: "/services#capital-structuring",
+    href: "/capital-advisory/services#capital-structuring",
     image: "/blogimage.png",
     imageAlt:
       "Coins, a wooden house, and figures balanced on a seesaw under an umbrella",
@@ -99,7 +99,7 @@ const slides: readonly Slide[] = [
     title: "Entity Structuring",
     intro:
       "The structure your business operates under shapes its tax, compliance, and ability to grow. We help you choose and build the right one.",
-    href: "/services#entity-structuring",
+    href: "/capital-advisory/services#entity-structuring",
     image: "/servicedetails.png",
     imageAlt: "An advisor presenting growth charts to a team in a meeting room",
     offerings: [
@@ -129,7 +129,7 @@ const slides: readonly Slide[] = [
     title: "Cross-Border Advisory",
     intro:
       "Expanding, investing, or borrowing across borders brings new rules and risks. We help you structure international moves with confidence.",
-    href: "/services#cross-border-advisory",
+    href: "/capital-advisory/services#cross-border-advisory",
     image: "/aboutsection.png",
     imageAlt:
       "Valuation reports, a laptop with charts, and a model building on a desk",

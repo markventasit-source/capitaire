@@ -226,7 +226,7 @@ export default function ReadinessLens() {
           {active.pathTitle}
         </h4>
         <ShinyButton
-          href="/contact"
+          href="/capital-advisory/contact"
           className="flex w-full items-center justify-center rounded-sm border-0 bg-[linear-gradient(90deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] px-5 py-3 text-center shadow-none hover:shadow-none dark:hover:shadow-none [&>span:first-child]:mx-auto [&>span:first-child]:text-[15px] [&>span:first-child]:font-semibold [&>span:first-child]:leading-none [&>span:first-child]:tracking-normal [&>span:first-child]:text-white [&>span:first-child]:uppercase"
         >
           Discuss This
