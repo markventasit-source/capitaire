@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Threads from "@/components/Threads";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { NumberTicker } from "@/components/ui/number-ticker";
@@ -28,11 +29,15 @@ const heroCards = [
 ];
 
 const metrics = [
-  { value: 260, label: "Businesses Empowered" },
+  { value: 260, label: "Business Empowered" },
   { value: 150, label: "Transactions Advised" },
   { value: 120, label: "Business Valuations" },
-  { value: 60, label: "Investor Agreements" },
-  { value: 8, label: "Years Track Record", span: "col-span-2 md:col-span-1" },
+  { value: 100, label: "Investor Onboardings" },
+  {
+    value: 60,
+    label: "Companies' IFC Processes Implemented",
+    span: "col-span-2 md:col-span-1",
+  },
 ];
 
 const threadColor: [number, number, number] = [132 / 255, 142 / 255, 163 / 255];
@@ -126,12 +131,18 @@ function DesktopHero() {
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="cursor-pointer rounded-sm bg-white px-6 py-3 text-sm font-medium tracking-wider text-navy uppercase transition-all hover:bg-white/90">
+            <Link
+              href="/capital-advisory/services"
+              className="cursor-pointer rounded-sm bg-white px-6 py-3 text-sm font-medium tracking-wider text-navy uppercase transition-all hover:bg-white/90"
+            >
               Explore Services
-            </button>
-            <button className="cursor-pointer rounded-sm border border-[#cba64b]/40 px-6 py-3 text-sm font-medium tracking-wider text-primary uppercase transition-all hover:border-primary hover:bg-primary/10">
-              Find Your Starting Point
-            </button>
+            </Link>
+            <Link
+              href="/capital-advisory/contact"
+              className="cursor-pointer rounded-sm border border-[#cba64b]/40 px-6 py-3 text-sm font-medium tracking-wider text-primary uppercase transition-all hover:border-primary hover:bg-primary/10"
+            >
+              Talk to Us
+            </Link>
           </div>
         </MotionHero>
 
