@@ -3,26 +3,10 @@
 import { NumberTicker } from "@/components/ui/number-ticker";
 
 const stats = [
-  {
-    value: 15000,
-    suffix: "+",
-    label: "Clients ranging from 1 to 15,000+ employees",
-  },
-  {
-    value: 1300,
-    suffix: "+",
-    label: "Medium and large enterprise clients",
-  },
-  {
-    value: 50000,
-    suffix: "+",
-    label: "Payslips being produced and distributed every month",
-  },
-  {
-    value: 7,
-    suffix: " Million+",
-    label: "7 Million+ In BACS payments processed each month",
-  },
+  { value: 260, suffix: "+", label: "Businesses Empowered" },
+  { value: 120, suffix: "+", label: "Business Valuations" },
+  { value: 100, suffix: "+", label: "Investor Onboardings" },
+  { value: 60, suffix: "+", label: "Companies' IFC Processes Implemented" },
 ] as const;
 
 export default function MobileStatsGrid() {

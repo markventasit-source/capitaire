@@ -38,7 +38,7 @@ export default function AboutStory() {
 
           <MotionFade
             delay={0.1}
-            className="mt-8 grid grid-cols-1 gap-5 font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454] lg:grid-cols-2 lg:gap-x-14"
+            className="mt-8 grid grid-cols-1 gap-5 text-justify font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454] lg:grid-cols-2 lg:gap-x-14"
           >
             <div className="flex flex-col gap-5">
               {leftParagraphs.map((text) => (

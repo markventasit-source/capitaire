@@ -56,7 +56,7 @@ export default function AboutAdvantage() {
               <h3 className="mt-6 font-[family-name:var(--font-inter)] text-[24px] font-medium leading-[30px] tracking-normal text-[#1A2334] md:text-[26px] md:leading-[32px]">
                 {item.title}
               </h3>
-              <p className="mt-4 font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454]">
+              <p className="mt-4 text-justify font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454]">
                 {item.description}
               </p>
             </MotionItem>

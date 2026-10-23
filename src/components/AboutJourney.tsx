@@ -98,7 +98,7 @@ export default function AboutJourney() {
                     ))}
                   </ul>
                 ) : (
-                  <p className="mt-4 font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454]">
+                  <p className="mt-4 text-justify font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454]">
                     {pillar.description}
                   </p>
                 )}

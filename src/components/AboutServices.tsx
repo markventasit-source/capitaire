@@ -235,7 +235,7 @@ function SlideContent({
         <h3 className="font-[family-name:var(--font-inter)] text-[28px] font-semibold leading-tight tracking-normal text-white md:text-[36px]">
           {slide.title}
         </h3>
-        <p className="mt-3 max-w-[560px] font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[22px] tracking-normal text-white/90 md:text-[16px] md:leading-[24px]">
+        <p className="mt-3 max-w-[560px] text-justify font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[22px] tracking-normal text-white/90 md:text-[16px] md:leading-[24px]">
           {slide.intro}
         </p>
 
@@ -261,7 +261,7 @@ function SlideContent({
                 <h4 className="font-[family-name:var(--font-inter)] text-[16px] font-semibold leading-[24px] tracking-normal text-white md:text-[18px]">
                   {item.title}
                 </h4>
-                <p className="mt-1 font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[20px] tracking-normal text-[#A5ADBC]">
+                <p className="mt-1 text-justify font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[20px] tracking-normal text-[#A5ADBC]">
                   {item.description}
                 </p>
               </div>
