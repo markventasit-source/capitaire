@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -10,17 +10,37 @@ import { ShinyButton } from "@/components/ui/shiny-button";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { MotionHero } from "@/components/ui/motion";
 import { cn } from "@/lib/utils";
+import { services } from "@/data/services";
 
 const HOME = "/capital-advisory";
+const PHONE_HREF = "tel:+917907267290";
 
-const navItems = [
+type NavLink = { label: string; href: string };
+type NavItem = NavLink & { children?: readonly NavLink[] };
+
+const navItems: readonly NavItem[] = [
   { label: "HOME", href: HOME },
   { label: "ABOUT US", href: `${HOME}/about` },
-  { label: "QUESTIONS", href: `${HOME}/questions` },
-  { label: "SERVICES", href: `${HOME}/services` },
-  { label: "PROCESS", href: `${HOME}/process` },
-  { label: "BLOG", href: `${HOME}/blog` },
-] as const;
+  {
+    label: "SERVICES",
+    href: `${HOME}/services`,
+    children: services.map((service) => ({
+      label: service.title.join(" "),
+      href: service.detail
+        ? `${HOME}/services/${service.slug}`
+        : `${HOME}/services#${service.slug}`,
+    })),
+  },
+  {
+    label: "RESOURCES",
+    href: `${HOME}/blog`,
+    children: [
+      { label: "Blog", href: `${HOME}/blog` },
+      { label: "Questions (FAQ)", href: `${HOME}#faq` },
+    ],
+  },
+  { label: "CONTACT", href: `${HOME}/contact` },
+];
 
 const compactMenuItems = [
   { label: "Home", href: HOME },
@@ -33,7 +53,6 @@ function isActive(pathname: string, href: string) {
   if (href === HOME) return pathname === HOME;
   return pathname.startsWith(href);
 }
-
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -124,25 +143,56 @@ export default function Navbar() {
             {navItems.map((item) => {
               const active = isActive(pathname, item.href);
 
+              const linkClassName = cn(
+                "inline-flex items-center gap-1 text-[15px] leading-none uppercase transition-colors",
+                active
+                  ? "font-semibold text-primary"
+                  : "font-normal text-white hover:text-primary group-hover:text-primary"
+              );
+
+              if (!item.children) {
+                return (
+                  <li key={item.label}>
+                    <Link href={item.href} className={linkClassName}>
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              }
+
               return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={`text-[15px] leading-none uppercase transition-colors ${
-                      active
-                        ? "font-semibold text-primary"
-                        : "font-normal text-white hover:text-primary"
-                    }`}
-                  >
+                <li key={item.label} className="group relative">
+                  <Link href={item.href} aria-haspopup="true" className={linkClassName}>
                     {item.label}
+                    <ChevronDown
+                      className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                      strokeWidth={1.75}
+                      aria-hidden
+                    />
                   </Link>
+                  {/* pt-4 bridges the gap so the menu stays open while the pointer moves into it. */}
+                  <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <ul className="min-w-[240px] rounded-md border border-white/10 bg-[#1F293D] p-2 shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            onClick={(event) => event.currentTarget.blur()}
+                            className="block whitespace-nowrap rounded-[4px] px-4 py-3 text-[14px] font-normal leading-none text-white transition-colors hover:bg-white/5 hover:text-primary"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </li>
               );
             })}
           </ul>
 
           <ShinyButton
-            href={`${HOME}/contact`}
+            href={PHONE_HREF}
             className="hidden shrink-0 rounded-md border-0 bg-[linear-gradient(90deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] px-5 py-3 shadow-none hover:shadow-none max-[589px]:!hidden sm:inline-flex dark:hover:shadow-none [&>span:first-child]:text-[15px] [&>span:first-child]:font-semibold [&>span:first-child]:leading-none [&>span:first-child]:text-white [&>span:first-child]:uppercase [&>span:first-child]:tracking-normal"
           >
             Talk to Us
@@ -202,7 +252,7 @@ export default function Navbar() {
 
                 return (
                   <motion.li
-                    key={item.href}
+                    key={item.label}
                     variants={{
                       hidden: { opacity: 0, x: -16 },
                       visible: { opacity: 1, x: 0 },
@@ -221,6 +271,21 @@ export default function Navbar() {
                     >
                       {item.label}
                     </Link>
+                    {item.children && (
+                      <ul className="mb-2 ml-3 grid grid-cols-2 gap-x-4 border-l border-white/10 pl-3">
+                        {item.children.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              href={child.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="block rounded-md px-3 py-2.5 text-[14px] leading-none text-[#A5ADBC] transition-colors hover:bg-white/5 hover:text-primary"
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </motion.li>
                 );
               })}
@@ -233,7 +298,7 @@ export default function Navbar() {
               className="site-container border-t border-white/10 px-3 py-6"
             >
               <ShinyButton
-                href={`${HOME}/contact`}
+                href={PHONE_HREF}
                 onClick={() => setMobileOpen(false)}
                 className="w-full justify-center rounded-md border-0 bg-[linear-gradient(90deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] px-5 py-3 shadow-none hover:shadow-none dark:hover:shadow-none [&>span:first-child]:text-[15px] [&>span:first-child]:font-semibold [&>span:first-child]:leading-none [&>span:first-child]:text-white [&>span:first-child]:uppercase [&>span:first-child]:tracking-normal"
               >

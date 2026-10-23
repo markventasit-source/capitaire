@@ -55,7 +55,7 @@ export const faqItems: FaqItem[] = [
 
 export default function CommonQuestions() {
   return (
-    <MotionSection className="site-container w-full bg-navy py-20 font-sans text-white">
+    <MotionSection id="faq" className="site-container w-full scroll-mt-[88px] bg-navy py-20 font-sans text-white">
       <div className="mb-16 grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
         <MotionFade className="flex flex-col gap-3 lg:col-span-7">
           <span className="text-gradient-primary text-base font-medium leading-6 uppercase tracking-normal text-justify">

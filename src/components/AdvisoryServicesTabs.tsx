@@ -84,7 +84,7 @@ export default function AdvisoryServicesTabs() {
       outputs: "Internal control matrices, corporate governance rulebooks, executive reporting cadences.",
       bestFor: "Founders seeking to transition operational loads onto autonomous systems to maximize exit premium value.",
       investorLens: "Demonstrates high professional stability that operates efficiently without reliant daily founder supervision.",
-      trackRecord: "60+ operational systems deployed across growth-focused brands.",
+      trackRecord: "60+ companies' IFC processes implemented.",
       lensTitle: "Systems elevate company value.",
       lensDesc: "Institutional frameworks secure repeatable output margins regardless of organizational shifts."
     },
