@@ -12,6 +12,7 @@ import WhyCapitaireGrid from "@/components/WhyCapitaireGrid";
 import CommonQuestions from "@/components/CommonQuestions";
 import ClientsGrid from "@/components/ClientsGrid";
 import CtaSection from "@/components/CtaSection";
+import HomeBlogsSection from "@/components/HomeBlogsSection";
 import FooterSection from "@/components/FooterSection";
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
         <CommonQuestions />
         <ClientsGrid />
         <CtaSection />
+        <HomeBlogsSection />
         <FooterSection />
       </div>
     </>
