@@ -8,9 +8,9 @@ const footerLinks = [
 ] as const;
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://linkedin.com", icon: LinkedInIcon },
-  { label: "Instagram", href: "https://instagram.com", icon: InstagramIcon },
-  { label: "Facebook", href: "https://facebook.com", icon: FacebookIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/capitaire/", icon: LinkedInIcon },
+  { label: "Instagram", href: "https://www.instagram.com/capitaire_consulting/", icon: InstagramIcon },
+  { label: "Facebook", href: "https://www.facebook.com/capitaire/", icon: FacebookIcon },
 
 ] as const;
 

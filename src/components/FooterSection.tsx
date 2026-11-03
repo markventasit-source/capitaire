@@ -24,9 +24,9 @@ const addresses = [
 ] as const;
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "/linkedin.svg" },
-  { label: "Instagram", href: "https://instagram.com", icon: "/instagram.svg" },
-  { label: "Facebook", href: "https://facebook.com", icon: "/fb.png" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/capitaire/", icon: "/linkedin.svg" },
+  { label: "Instagram", href: "https://www.instagram.com/capitaire_consulting/", icon: "/instagram.svg" },
+  { label: "Facebook", href: "https://www.facebook.com/capitaire/", icon: "/fb.png" },
 
 ] as const;
 

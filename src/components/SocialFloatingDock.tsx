@@ -6,17 +6,17 @@ import { FloatingDock } from "@/components/ui/floating-dock";
 const socialLinks = [
   {
     title: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/capitaire_consulting/",
     icon: "/instagram.svg",
   },
   {
     title: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/company/capitaire/",
     icon: "/linkedin.svg",
   },
   {
     title: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/capitaire/",
     icon: "/fb.png",
   }
 ] as const;
