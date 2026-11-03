@@ -22,6 +22,7 @@ interface ServiceData {
   trackRecord: string;
   lensTitle: string;
   lensDesc: string;
+  image: string;
 }
 
 export default function AdvisoryServicesTabs() {
@@ -38,7 +39,8 @@ export default function AdvisoryServicesTabs() {
       investorLens: "The business becomes easier to price, compare, and underwrite.",
       trackRecord: "120+ business valuations across 26+ industries.",
       lensTitle: "A number investors can believe.",
-      lensDesc: "A valuation is strongest when the assumptions, growth story, and return logic all speak the same language."
+      lensDesc: "A valuation is strongest when the assumptions, growth story, and return logic all speak the same language.",
+      image: "/ups.webp",
     },
     {
       id: "02",
@@ -50,7 +52,8 @@ export default function AdvisoryServicesTabs() {
       investorLens: "Assures immediate regulatory compliance and limits post-deal friction.",
       trackRecord: "150+ transactions strategically advised and deployed.",
       lensTitle: "Optimized for continuous growth.",
-      lensDesc: "The proper foundation makes sure future capital rounds don't break your underlying corporate governance."
+      lensDesc: "The proper foundation makes sure future capital rounds don't break your underlying corporate governance.",
+      image: "/ups2.webp",
     },
     {
       id: "03",
@@ -62,7 +65,8 @@ export default function AdvisoryServicesTabs() {
       investorLens: "Removes corporate complexity, presenting an absolute clear path to target ownership.",
       trackRecord: "Clean group transitions for leading family-managed enterprises.",
       lensTitle: "Clarity breeds confidence.",
-      lensDesc: "Unified operational structures ensure asset value isn't leaking through hidden inter-company crossway pipelines."
+      lensDesc: "Unified operational structures ensure asset value isn't leaking through hidden inter-company crossway pipelines.",
+      image: "/ups3.webp",
     },
     {
       id: "04",
@@ -74,7 +78,8 @@ export default function AdvisoryServicesTabs() {
       investorLens: "Guarantees cross-border capital inflows are fully defensible and audit-ready from day zero.",
       trackRecord: "Flawless compliance track records on global inbound capital injections.",
       lensTitle: "Borders shouldn't stall momentum.",
-      lensDesc: "Setting up correct legal funnels ensures global funds don't trigger unnecessary regulatory locks."
+      lensDesc: "Setting up correct legal funnels ensures global funds don't trigger unnecessary regulatory locks.",
+      image: "/ups4.webp",
     },
     {
       id: "05",
@@ -86,7 +91,8 @@ export default function AdvisoryServicesTabs() {
       investorLens: "Demonstrates high professional stability that operates efficiently without reliant daily founder supervision.",
       trackRecord: "60+ companies' IFC processes implemented.",
       lensTitle: "Systems elevate company value.",
-      lensDesc: "Institutional frameworks secure repeatable output margins regardless of organizational shifts."
+      lensDesc: "Institutional frameworks secure repeatable output margins regardless of organizational shifts.",
+      image: "/ups5.webp",
     },
     {
       id: "06",
@@ -98,7 +104,8 @@ export default function AdvisoryServicesTabs() {
       investorLens: "Ensures seamless continuity during significant leadership restructures.",
       trackRecord: "Multigenerational wealth preservation plans reliably activated.",
       lensTitle: "Protect your hard-earned legacy.",
-      lensDesc: "A masterfully drafted transition safeguards enterprise momentum through critical family or management hands."
+      lensDesc: "A masterfully drafted transition safeguards enterprise momentum through critical family or management hands.",
+      image: "/ups6.webp",
     }
   ];
 
@@ -232,17 +239,18 @@ export default function AdvisoryServicesTabs() {
           </BlurFade>
         </div>
 
-        <div className="relative flex min-h-[380px] flex-col justify-between overflow-hidden bg-[#1a2334] p-8 text-white md:col-span-3">
-          <div className="relative mx-auto mt-2 aspect-video w-full max-w-[200px] md:aspect-square">
+        <div className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#1a2334] p-8 text-white md:col-span-3">
+          <BlurFade key={`service-img-${activeTab}`} direction="up" duration={0.35} className="absolute inset-0">
             <Image
-              src="/up.png"
+              src={services[activeTab].image}
               alt="Investor Lens Graphic"
               fill
-              className="object-contain"
+              className="object-contain object-top"
               priority
             />
-          </div>
+          </BlurFade>
 
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a2334] via-[#1a2334]/60 to-transparent" aria-hidden />
           <BlurFade
             key={`service-lens-${activeTab}`}
             direction="up"
