@@ -91,9 +91,16 @@ export default function ServiceDetail({ heading, image, topics }: ServiceDetailP
               <h2 className="font-[family-name:var(--font-inter)] text-[30px] font-semibold leading-[38px] tracking-normal md:text-[44px] md:leading-[52px]">
                 {topic.title}
               </h2>
-              <p className="mt-4 font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454]">
-                {topic.description}
-              </p>
+              <div className="mt-4 flex flex-col gap-4">
+                {topic.description.split("\n\n").map((para, i) => (
+                  <p
+                    key={i}
+                    className="font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454]"
+                  >
+                    {para}
+                  </p>
+                ))}
+              </div>
             </BlurFade>
 
             <div className="mt-10 grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)]">
