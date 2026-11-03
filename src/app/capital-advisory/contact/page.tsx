@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import ContactSection from "@/components/ContactSection";
-import FooterSection from "@/components/FooterSection";
+import ContactFooter from "@/components/ContactFooter";
 import MobileFooter from "@/components/MobileFooter";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function ContactPage() {
       <ContactSection />
       <MobileFooter />
       <div className="max-[589px]:hidden">
-        <FooterSection />
+        <ContactFooter />
       </div>
     </>
   );
