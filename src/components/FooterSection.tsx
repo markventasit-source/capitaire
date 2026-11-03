@@ -27,7 +27,7 @@ const socialLinks = [
   { label: "LinkedIn", href: "https://linkedin.com", icon: "/linkedin.svg" },
   { label: "Instagram", href: "https://instagram.com", icon: "/instagram.svg" },
   { label: "Facebook", href: "https://facebook.com", icon: "/fb.png" },
-  { label: "YouTube", href: "https://youtube.com", icon: "/yt.svg" },
+
 ] as const;
 
 // Show first 4 blog posts as quick links

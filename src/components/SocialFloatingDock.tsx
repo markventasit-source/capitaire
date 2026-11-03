@@ -18,12 +18,7 @@ const socialLinks = [
     title: "Facebook",
     href: "https://facebook.com",
     icon: "/fb.png",
-  },
-  {
-    title: "YouTube",
-    href: "https://youtube.com",
-    icon: "/yt.svg",
-  },
+  }
 ] as const;
 
 export default function SocialFloatingDock() {

@@ -11,7 +11,7 @@ const socialLinks = [
   { label: "LinkedIn", href: "https://linkedin.com", icon: LinkedInIcon },
   { label: "Instagram", href: "https://instagram.com", icon: InstagramIcon },
   { label: "Facebook", href: "https://facebook.com", icon: FacebookIcon },
-  { label: "YouTube", href: "https://youtube.com", icon: YouTubeIcon },
+
 ] as const;
 
 const addresses = [
