@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import ServiceDetail from "@/components/ServiceDetail";
 import FooterSection from "@/components/FooterSection";
@@ -34,35 +32,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
-  const detail = getService(slug)?.detail;
+  const service = getService(slug);
+  const detail = service?.detail;
 
   if (!detail) notFound();
 
-  const service = getService(slug)!;
-
   return (
     <>
-      <PageBanner title="Services" />
-
-      {/* Breadcrumb */}
-      <nav
-        aria-label="Breadcrumb"
-        className="w-full bg-white border-b border-[#E5E5E5]"
-      >
-        <div className="site-container flex items-center gap-2 py-3 font-[family-name:var(--font-inter)] text-[13px] text-[#848EA3]">
-          <Link
-            href="/capital-advisory/services"
-            className="transition-colors hover:text-[#1A2334]"
-          >
-            All Services
-          </Link>
-          <ChevronRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
-          <span className="text-[#1A2334] font-medium">
-            {service.title.join(" ")}
-          </span>
-        </div>
-      </nav>
-
+      <PageBanner
+        title="Services"
+        breadcrumb={[
+          { label: "All Services", href: "/capital-advisory/services" },
+          { label: service!.title.join(" ") },
+        ]}
+      />
       <ServiceDetail
         heading={detail.heading}
         image={detail.image}
