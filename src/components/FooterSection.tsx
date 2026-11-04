@@ -19,8 +19,8 @@ const legalLinks = [
 ] as const;
 
 const addresses = [
-  "2nd Floor, Imperial Amity, Chalikkavattom, NH Bypass, Vyttila, Kochi - 682019",
-  "First Floor, Building No.55-3355B, Raveendran Road, Kadavanthra, Kochi - 682020",
+  "Waxseal Fintech Private Limited. CAPITAIRE — 2nd Floor, Imperial Amity, Chalikkavattom, NH Bypass, Vyttila, Kochi - 682019",
+  "Waxseal Fintech Private Limited. CAPITAIRE — First Floor, Building No.55-3355B, Raveendran Road, Kadavanthra, Kochi - 682020",
 ] as const;
 
 const socialLinks = [

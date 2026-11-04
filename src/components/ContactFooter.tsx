@@ -13,6 +13,8 @@ const contactItems = [
     icon: "/location.png",
     label: "Location 1",
     lines: [
+      "Waxseal Fintech Private Limited.",
+      "CAPITAIRE",
       "2nd Floor, Imperial Amity, Chalikkavattom, NH Bypass, Vyttila, Kochi - 682019",
     ],
   },
@@ -20,6 +22,8 @@ const contactItems = [
     icon: "/location.png",
     label: "Location 2",
     lines: [
+      "Waxseal Fintech Private Limited.",
+      "CAPITAIRE",
       "First Floor, Building No.55-3355B, Raveendran Road, Kadavanthra, Kochi - 682020",
     ],
   },
@@ -41,6 +45,10 @@ export default function ContactFooter() {
   return (
     <footer className="w-full bg-navy font-sans text-white">
       <div className="site-container grid grid-cols-1 gap-12 py-20 lg:grid-cols-12 lg:gap-16">
+        <MotionScale className="lg:col-span-7" delay={0.1}>
+          <ContactForm />
+        </MotionScale>
+
         <MotionFade className="flex flex-col gap-10 lg:col-span-5">
           <div className="flex flex-col gap-3">
             <span className="text-gradient-primary text-base font-medium leading-6 uppercase tracking-normal">
@@ -68,8 +76,8 @@ export default function ContactFooter() {
                   />
                 </div>
 
-                <div className="flex flex-col gap-3">
-                  {item.lines.map((line) =>
+                <div className="flex flex-col gap-1">
+                  {item.lines.map((line, i) =>
                     "href" in item && item.href ? (
                       <Link
                         key={line}
@@ -81,7 +89,13 @@ export default function ContactFooter() {
                     ) : (
                       <p
                         key={line}
-                        className="text-[16px] font-normal leading-[22.4px] tracking-normal text-[#A5ADBC]"
+                        className={
+                          i === 0
+                            ? "text-[12px] font-medium uppercase leading-none tracking-widest text-[#CBA64B]"
+                            : i === 1
+                              ? "text-[15px] font-semibold leading-[20px] tracking-normal text-white"
+                              : "text-[14px] font-normal leading-[22px] tracking-normal text-[#A5ADBC]"
+                        }
                       >
                         {line}
                       </p>
@@ -92,10 +106,6 @@ export default function ContactFooter() {
             ))}
           </MotionStagger>
         </MotionFade>
-
-        <MotionScale className="lg:col-span-7" delay={0.1}>
-          <ContactForm />
-        </MotionScale>
       </div>
 
       <div className="border-t border-white/10">

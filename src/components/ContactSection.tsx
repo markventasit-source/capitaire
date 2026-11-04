@@ -23,6 +23,7 @@ const contactItems = [
     icon: "/location.png",
     lines: [
       "Waxseal Fintech Private Limited.",
+      "CAPITAIRE",
       "2nd Floor, Imperial Amity, NH Bypass,",
       "Vyttila, Kochi, Kerala – 682019, India",
     ],
@@ -38,8 +39,21 @@ export default function ContactSection() {
           className="absolute inset-x-0 bottom-0 -z-10 h-[38%] bg-[#FFFCF6]"
         />
 
-        <div className="site-container grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.75fr)] lg:gap-8">
-          <MotionFade className="flex flex-col">
+        <div className="site-container grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.75fr)_minmax(0,1fr)] lg:gap-8">
+          <MotionFade
+            className="h-[360px] w-full overflow-hidden rounded-[4px] bg-[#E5E5E5] md:h-[480px] lg:h-full lg:min-h-[600px]"
+          >
+            <iframe
+              src={MAP_EMBED_URL}
+              title="CAPITAIRE Kochi office on Google Maps"
+              className="h-full w-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </MotionFade>
+
+          <MotionFade delay={0.1} className="flex flex-col">
             <h2 className="font-[family-name:var(--font-inter)] text-[32px] font-semibold leading-[40px] tracking-normal md:text-[38px] md:leading-[46px]">
               Get in Touch
             </h2>
@@ -73,9 +87,18 @@ export default function ContactSection() {
                         {item.lines[0]}
                       </Link>
                     ) : (
-                      <address className="mt-1.5 font-[family-name:var(--font-inter)] text-[16px] font-normal not-italic leading-[26px] tracking-normal text-[#1A2334] md:text-[18px] md:leading-[28px]">
-                        {item.lines.map((line) => (
-                          <span key={line} className="block">
+                      <address className="mt-1.5 font-[family-name:var(--font-inter)] not-italic">
+                        {item.lines.map((line, i) => (
+                          <span
+                            key={line}
+                            className={
+                              i === 0
+                                ? "block text-[11px] font-medium uppercase leading-none tracking-widest text-[#CBA64B]"
+                                : i === 1
+                                  ? "mt-1 block text-[16px] font-semibold leading-[22px] tracking-normal text-[#1A2334] md:text-[18px]"
+                                  : "block text-[14px] font-normal leading-[22px] tracking-normal text-[#555454]"
+                            }
+                          >
                             {line}
                           </span>
                         ))}
@@ -85,20 +108,6 @@ export default function ContactSection() {
                 </MotionItem>
               ))}
             </MotionStagger>
-          </MotionFade>
-
-          <MotionFade
-            delay={0.1}
-            className="h-[360px] w-full overflow-hidden rounded-[4px] bg-[#E5E5E5] md:h-[480px] lg:h-full lg:min-h-[600px]"
-          >
-            <iframe
-              src={MAP_EMBED_URL}
-              title="CAPITAIRE Kochi office on Google Maps"
-              className="h-full w-full border-0"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
           </MotionFade>
         </div>
       </section>
