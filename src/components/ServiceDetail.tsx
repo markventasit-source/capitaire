@@ -76,18 +76,7 @@ export default function ServiceDetail({ heading, image, topics }: ServiceDetailP
             delay={0.1}
             className="rounded-[8px] bg-white p-5 md:p-10 lg:col-start-2 lg:row-span-2 lg:row-start-1 xl:p-12"
           >
-            <div className="relative aspect-[858/549] w-full overflow-hidden rounded-b-[12px] md:aspect-[858/420]">
-              <Image
-                src={image}
-                alt=""
-                fill
-                priority
-                sizes="(min-width: 1280px) 900px, (min-width: 1024px) 65vw, 100vw"
-                className="object-cover object-top"
-              />
-            </div>
-
-            <BlurFade key={topic.title} direction="up" duration={0.35} className="mt-8 md:mt-10">
+            <BlurFade key={topic.title} direction="up" duration={0.35}>
               <h2 className="font-[family-name:var(--font-inter)] text-[30px] font-semibold leading-[38px] tracking-normal md:text-[44px] md:leading-[52px]">
                 {topic.title}
               </h2>
@@ -102,6 +91,17 @@ export default function ServiceDetail({ heading, image, topics }: ServiceDetailP
                 ))}
               </div>
             </BlurFade>
+
+            <div className="relative mt-8 aspect-[858/420] w-full overflow-hidden rounded-[8px] md:mt-10 md:aspect-[858/320]">
+              <Image
+                src={image}
+                alt=""
+                fill
+                priority
+                sizes="(min-width: 1280px) 900px, (min-width: 1024px) 65vw, 100vw"
+                className="object-cover object-top"
+              />
+            </div>
 
             <div className="mt-10 grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)]">
               <div className="rounded-[4px] bg-[#F3F8FF] p-6 md:p-8">
