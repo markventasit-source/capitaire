@@ -37,13 +37,8 @@ export default function ContactSection() {
           className="absolute inset-x-0 bottom-0 -z-10 h-[38%] bg-[#FFFCF6]"
         />
 
-        <div className="site-container grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.75fr)_minmax(0,1fr)] lg:gap-8">
-          {/* Form — left, large column */}
-          <MotionScale delay={0.05}>
-            <ContactForm />
-          </MotionScale>
-
-          {/* Contact info — right column */}
+        <div className="site-container grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.75fr)] lg:gap-8">
+          {/* Contact info — left column */}
           <MotionFade delay={0.1} className="flex flex-col">
             <h2 className="font-[family-name:var(--font-inter)] text-[32px] font-semibold leading-[40px] tracking-normal md:text-[38px] md:leading-[46px]">
               Get in Touch
@@ -103,6 +98,11 @@ export default function ContactSection() {
               ))}
             </MotionStagger>
           </MotionFade>
+
+          {/* Form — right, large column */}
+          <MotionScale delay={0.05}>
+            <ContactForm />
+          </MotionScale>
         </div>
       </section>
 

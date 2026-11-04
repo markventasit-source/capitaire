@@ -18,9 +18,23 @@ const legalLinks = [
   { label: "Disclaimer", href: "#" },
 ] as const;
 
-const addresses = [
-  "Waxseal Fintech Private Limited. CAPITAIRE — 2nd Floor, Imperial Amity, Chalikkavattom, NH Bypass, Vyttila, Kochi - 682019",
-  "Waxseal Fintech Private Limited. CAPITAIRE — First Floor, Building No.55-3355B, Raveendran Road, Kadavanthra, Kochi - 682020",
+const offices = [
+  {
+    legalEntity: "Waxseal Fintech Private Limited",
+    brand: "CAPITAIRE",
+    lines: [
+      "2nd Floor, Imperial Amity, Chalikkavattom,",
+      "NH Bypass, Vyttila, Kochi - 682019",
+    ],
+  },
+  {
+    legalEntity: "Waxseal Fintech Private Limited",
+    brand: "CAPITAIRE",
+    lines: [
+      "First Floor, Building No.55-3355B,",
+      "Raveendran Road, Kadavanthra, Kochi - 682020",
+    ],
+  },
 ] as const;
 
 const socialLinks = [
@@ -145,20 +159,32 @@ export default function FooterSection() {
             <h3 className="text-[13px] font-semibold uppercase leading-none tracking-[0.1em] text-[#CBA64B]">
               Our Offices
             </h3>
-            {addresses.map((addr) => (
-              <p
-                key={addr}
-                className="flex gap-3 text-[13px] font-normal leading-[20px] text-[#A5ADBC]"
-              >
+            {offices.map((office, i) => (
+              <div key={i} className="flex gap-3">
                 <Image
                   src="/location.png"
                   alt=""
                   width={14}
                   height={14}
-                  className="mt-0.5 h-3.5 w-3.5 shrink-0 object-contain opacity-60"
+                  className="mt-1 h-3.5 w-3.5 shrink-0 object-contain opacity-60"
                 />
-                {addr}
-              </p>
+                <address className="not-italic">
+                  <span className="block text-[10px] font-medium uppercase leading-none tracking-widest text-[#CBA64B]">
+                    Legal Entity
+                  </span>
+                  <span className="mt-1 block text-[12px] font-normal leading-[16px] text-[#A5ADBC]">
+                    {office.legalEntity}
+                  </span>
+                  <span className="mt-1 block text-[13px] font-semibold leading-[18px] text-white">
+                    {office.brand}
+                  </span>
+                  {office.lines.map((line) => (
+                    <span key={line} className="block text-[12px] font-normal leading-[18px] text-[#A5ADBC]">
+                      {line}
+                    </span>
+                  ))}
+                </address>
+              </div>
             ))}
           </div>
 

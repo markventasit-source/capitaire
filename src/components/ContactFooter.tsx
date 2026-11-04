@@ -49,21 +49,7 @@ export default function ContactFooter() {
     <footer className="w-full bg-navy font-sans text-white">
       <div className="site-container grid grid-cols-1 gap-12 py-20 lg:grid-cols-12 lg:gap-16">
 
-        {/* Map — left, large column */}
-        <MotionFade
-          className="h-[360px] w-full overflow-hidden rounded-[4px] lg:col-span-7 lg:h-full lg:min-h-[560px]"
-        >
-          <iframe
-            src={MAP_EMBED_URL}
-            title="CAPITAIRE Kochi office on Google Maps"
-            className="h-full w-full border-0"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="strict-origin-when-cross-origin"
-          />
-        </MotionFade>
-
-        {/* Contact info — right column */}
+        {/* Contact info — left column */}
         <MotionFade delay={0.1} className="flex flex-col gap-10 lg:col-span-5">
           <div className="flex flex-col gap-3">
             <span className="text-gradient-primary text-base font-medium leading-6 uppercase tracking-normal">
@@ -124,6 +110,20 @@ export default function ContactFooter() {
               </MotionItem>
             ))}
           </MotionStagger>
+        </MotionFade>
+
+        {/* Map — right, large column */}
+        <MotionFade
+          className="h-[360px] w-full overflow-hidden rounded-[4px] lg:col-span-7 lg:h-full lg:min-h-[560px]"
+        >
+          <iframe
+            src={MAP_EMBED_URL}
+            title="CAPITAIRE Kochi office on Google Maps"
+            className="h-full w-full border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
         </MotionFade>
       </div>
 
