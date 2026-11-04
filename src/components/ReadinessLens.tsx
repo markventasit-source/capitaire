@@ -44,7 +44,7 @@ export default function ReadinessLens() {
       ],
       pathBadge: "Primary Advisory Path",
       pathTitle: "Valuation + capital strategy",
-      image: "/d1.webp",
+      image: "/d3.webp",
     },
     {
       id: "control",
@@ -78,7 +78,7 @@ export default function ReadinessLens() {
       ],
       pathBadge: "Primary Advisory Path",
       pathTitle: "Entity structuring",
-      image: "/d3.webp",
+      image: "/d1.webp",
     },
     {
       id: "global",
