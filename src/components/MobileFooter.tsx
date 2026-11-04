@@ -14,9 +14,23 @@ const socialLinks = [
 
 ] as const;
 
-const addresses = [
-  "Waxseal Fintech Private Limited. CAPITAIRE — 2nd Floor, Imperial Amity, Chalikkavattom, NH Bypass, Vyttila, Kochi - 682019",
-  "Waxseal Fintech Private Limited. CAPITAIRE — First Floor, Building No.55-3355B, Raveendran Road, Kadavanthra, Kochi - 682020",
+const offices = [
+  {
+    legalEntity: "Waxseal Fintech Private Limited",
+    brand: "CAPITAIRE",
+    lines: [
+      "2nd Floor, Imperial Amity, Chalikkavattom,",
+      "NH Bypass, Vyttila, Kochi - 682019",
+    ],
+  },
+  {
+    legalEntity: "Waxseal Fintech Private Limited",
+    brand: "CAPITAIRE",
+    lines: [
+      "First Floor, Building No.55-3355B,",
+      "Raveendran Road, Kadavanthra, Kochi - 682020",
+    ],
+  },
 ] as const;
 
 function LinkedInIcon() {
@@ -100,14 +114,24 @@ export default function MobileFooter() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 border-t border-white/15 py-6 pr-[20px]">
-        {addresses.map((address) => (
-          <p
-            key={address}
-            className="font-[family-name:var(--font-inter)] text-[16px] font-medium leading-[24px] tracking-normal text-white"
-          >
-            {address}
-          </p>
+      <div className="flex flex-col gap-6 border-t border-white/15 py-6 pr-[20px]">
+        {offices.map((office, i) => (
+          <address key={i} className="not-italic">
+            <span className="block font-[family-name:var(--font-inter)] text-[10px] font-medium uppercase leading-none tracking-widest text-[#CBA64B]">
+              Legal Entity
+            </span>
+            <span className="mt-1 block font-[family-name:var(--font-inter)] text-[13px] font-normal leading-[18px] tracking-normal text-white/60">
+              {office.legalEntity}
+            </span>
+            <span className="mt-1 block font-[family-name:var(--font-inter)] text-[15px] font-semibold leading-[20px] tracking-normal text-white">
+              {office.brand}
+            </span>
+            {office.lines.map((line) => (
+              <span key={line} className="block font-[family-name:var(--font-inter)] text-[13px] font-normal leading-[20px] tracking-normal text-white/60">
+                {line}
+              </span>
+            ))}
+          </address>
         ))}
       </div>
 

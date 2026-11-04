@@ -22,6 +22,7 @@ interface ReadinessItem {
   focusPoints: string[];
   pathBadge: string;
   pathTitle: string;
+  image: string;
 }
 
 export default function ReadinessLens() {
@@ -43,6 +44,7 @@ export default function ReadinessLens() {
       ],
       pathBadge: "Primary Advisory Path",
       pathTitle: "Valuation + capital strategy",
+      image: "/d1.webp",
     },
     {
       id: "control",
@@ -59,6 +61,7 @@ export default function ReadinessLens() {
       ],
       pathBadge: "Primary Advisory Path",
       pathTitle: "Capital structuring + governance",
+      image: "/d2.webp",
     },
     {
       id: "structure",
@@ -75,6 +78,7 @@ export default function ReadinessLens() {
       ],
       pathBadge: "Primary Advisory Path",
       pathTitle: "Entity structuring",
+      image: "/d3.webp",
     },
     {
       id: "global",
@@ -91,6 +95,7 @@ export default function ReadinessLens() {
       ],
       pathBadge: "Primary Advisory Path",
       pathTitle: "Cross-border advisory",
+      image: "/d4.webp",
     },
     {
       id: "future",
@@ -107,6 +112,7 @@ export default function ReadinessLens() {
       ],
       pathBadge: "Primary Advisory Path",
       pathTitle: "Succession and exit",
+      image: "/d1.webp",
     },
   ];
 
@@ -202,16 +208,18 @@ export default function ReadinessLens() {
       </BlurFade>
     </div>
 
-    <div className="relative flex min-h-[380px] flex-col justify-between overflow-hidden bg-[#1a2334] p-8 text-white md:col-span-4">
-      <div className="relative mx-auto mt-2 aspect-video w-full max-w-[220px] md:aspect-square">
+    <div className="relative flex min-h-[380px] flex-col justify-end overflow-hidden bg-[#1a2334] p-8 text-white md:col-span-4">
+      <BlurFade key={`readiness-img-${activeTab}`} direction="up" duration={0.35} className="absolute inset-0">
         <Image
-          src="/loan.png"
+          src={active.image}
           alt="Readiness advisory path illustration"
           fill
-          className="object-contain"
+          className="object-contain object-top"
           priority
         />
-      </div>
+      </BlurFade>
+
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a2334] via-[#1a2334]/60 to-transparent" aria-hidden />
 
       <BlurFade
         key={`readiness-path-${activeTab}`}
