@@ -322,6 +322,17 @@ function PinnedServices() {
   }, []);
 
   const syncToScroll = useCallback(() => {
+    // Respect user’s reduced‑motion preference: skip the forced scroll‑position adjustments
+    if (reduceMotion) {
+      // Just update the last known position without interfering with native scrolling
+      const current = metricsRef.current;
+      const track = trackRef.current;
+      if (!current || !track) return;
+      let position = (current.stickyTop - track.getBoundingClientRect().top) / current.step;
+      lastPositionRef.current = position;
+      return;
+    }
+
     const current = metricsRef.current;
     const track = trackRef.current;
     if (!current || !track) return;
@@ -591,7 +602,7 @@ export default function AboutServices() {
           </h2>
         </MotionFade>
 
-        {pinned === false ? <StackedServices /> : <PinnedServices />}
+        <StackedServices />
       </div>
     </section>
   );
