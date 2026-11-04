@@ -1,6 +1,6 @@
 import { MotionFade, MotionSection } from "@/components/ui/motion";
-import { Marquee } from "@/components/ui/marquee";
 
+const DESKTOP_VISIBLE_COUNT = 15;
 const clientLogos = [
   "/c1.jpg",
   "/c2.png",
@@ -19,26 +19,12 @@ const clientLogos = [
   "/c15.png",
 ] as const;
 
-// Two rows — second row offset for variety
-const row1 = [...clientLogos];
-const row2 = [...clientLogos.slice(5), ...clientLogos.slice(0, 5)];
-
-function LogoCell({ src }: { src: string }) {
-  return (
-    <div className="flex h-[110px] w-[180px] shrink-0 items-center justify-center border-r border-b border-[#E8DDC3] px-6 py-5">
-      <img
-        src={src}
-        alt="Client logo"
-        className="block h-auto max-h-[54px] w-auto max-w-[140px] object-contain"
-      />
-    </div>
-  );
-}
-
 export default function ClientsGrid() {
+  const logos = clientLogos.slice(0, DESKTOP_VISIBLE_COUNT);
+
   return (
-    <MotionSection className="relative w-full overflow-hidden bg-white py-20 font-sans text-[#1A2334]">
-      <div className="site-container mb-16 grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+    <MotionSection className="site-container w-full bg-white py-20 font-sans text-[#1A2334]">
+      <div className="mb-16 grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
         <MotionFade className="lg:col-span-3">
           <h2 className="text-[36px] font-semibold leading-[44px] tracking-normal text-[#1A2334]">
             Clients
@@ -54,26 +40,33 @@ export default function ClientsGrid() {
         </MotionFade>
       </div>
 
-      {/* Scrolling rows — border-l and border-t on the wrapper to close the grid border */}
-      <div className="border-l border-t border-[#E8DDC3]">
-        {/* Row 1 — scrolls left */}
-        <Marquee pauseOnHover className="[--duration:40s] [--gap:0px]">
-          {row1.map((logo, i) => (
-            <LogoCell key={i} src={logo} />
+      <div className="overflow-hidden rounded-sm border-l border-t border-[#E8DDC3] bg-white">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+          {logos.map((logo, index) => (
+            <div
+              key={index}
+              className="flex h-[110px] items-center justify-center border-r border-b border-[#E8DDC3] px-6 py-5"
+            >
+              <img
+                src={logo}
+                alt="Client logo"
+                className="block h-auto max-h-[54px] w-auto max-w-[140px] object-contain"
+              />
+            </div>
           ))}
-        </Marquee>
-
-        {/* Row 2 — scrolls right */}
-        <Marquee reverse pauseOnHover className="[--duration:45s] [--gap:0px]">
-          {row2.map((logo, i) => (
-            <LogoCell key={i} src={logo} />
-          ))}
-        </Marquee>
+        </div>
       </div>
 
-      {/* Edge fades */}
-      <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
-      <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent" />
+      <MotionFade className="mt-6 flex items-center justify-center gap-2" delay={0.2}>
+        {Array.from({ length: 4 }, (_, dot) => (
+          <span
+            key={dot}
+            className={`h-2 w-2 rounded-full ${
+              dot === 0 ? "bg-[#1A2334]" : "bg-[#D9D9D9]"
+            }`}
+          />
+        ))}
+      </MotionFade>
     </MotionSection>
   );
 }
