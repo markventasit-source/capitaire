@@ -189,7 +189,7 @@ export default function FooterSection() {
           </div>
 
           {/* Latest blogs */}
-          <div className="flex flex-col gap-5">
+          {/* <div className="flex flex-col gap-5">
             <h3 className="text-[13px] font-semibold uppercase leading-none tracking-[0.1em] text-[#CBA64B]">
               Latest Blogs
             </h3>
@@ -208,7 +208,7 @@ export default function FooterSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </MotionFade>
       </div>
 
