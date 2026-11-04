@@ -214,7 +214,7 @@ export default function ReadinessLens() {
           src={active.image}
           alt="Readiness advisory path illustration"
           fill
-          className="object-contain object-top"
+          className="object-cover object-top"
           priority
         />
       </BlurFade>

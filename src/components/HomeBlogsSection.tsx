@@ -39,7 +39,7 @@ function BlogCard({
           <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[#CBA64B]" />
           {post.date}
         </p>
-        <h3 className="mt-4 flex-1 font-[family-name:var(--font-inter)] text-[16px] font-medium leading-[24px] tracking-normal text-[#1A2334] md:text-[18px] md:leading-[26px]">
+        <h3 className="mt-4 flex-1 font-[family-name:var(--font-inter)] text-[16px] font-medium leading-[24px] tracking-normal text-[#1A2334] md:text-[20px] md:leading-[28px] xl:text-[22px] xl:leading-[30px]">
           {post.title}
         </h3>
         <Link
