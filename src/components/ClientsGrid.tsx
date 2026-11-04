@@ -50,7 +50,7 @@ export default function ClientsGrid() {
               <img
                 src={logo}
                 alt="Client logo"
-                className="block h-auto max-h-[54px] w-auto max-w-[140px] object-contain"
+                className="block h-auto max-h-[54px] w-auto max-w-[140px] object-contain animate-pulse transition-transform duration-500 hover:scale-105"
               />
             </div>
           ))}

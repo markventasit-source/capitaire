@@ -29,7 +29,7 @@ export default function MobileClientsGrid() {
                 className={`h-[88px] px-3 py-4 ${
                   !isLastCol ? "border-r border-[#E8DDC3]" : ""
                 } ${!isLastRow ? "border-b border-[#E8DDC3]" : ""}`}
-                imageClassName="max-h-10 w-auto max-w-[90px] object-contain"
+                imageClassName="max-h-10 w-auto max-w-[90px] object-contain animate-pulse transition-transform duration-500 hover:scale-105"
               />
             );
           })}
