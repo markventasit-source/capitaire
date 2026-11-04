@@ -7,10 +7,10 @@ import {
 } from "@/components/ui/motion";
 
 const stats = [
-  { value: 35, label: ["Years of collective", "consulting experience"] },
-  { value: 200, label: ["Businesses", "supported"] },
-  { value: 30, label: ["Professionals", "& experts"] },
-  { value: 500, label: ["Advisory", "engagements"] },
+  { value: 260, label: ["Businesses", "empowered"] },
+  { value: 120, label: ["Business", "valuations"] },
+  { value: 100, label: ["Investor", "onboardings"] },
+  { value: 60, label: ["Companies' IFC processes", "implemented"] },
 ] as const;
 
 const pillars = [
@@ -34,6 +34,7 @@ const pillars = [
       "Commitment to Client Success",
       "Respect & Empathy",
       "Social & Environmental Responsibility",
+      "Continuous Learning & Improvement",
     ],
   },
 ] as const;
