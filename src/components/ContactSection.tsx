@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MotionFade, MotionItem, MotionStagger } from "@/components/ui/motion";
-
-const MAP_EMBED_URL =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.413847267614!2d76.31385187632512!3d9.982632190121844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d9817f6ed11%3A0xec5c9fa02da06fda!2sCAPITAIRE%20-%20KOCHI!5e0!3m2!1sen!2sin!4v1790682674824!5m2!1sen!2sin";
+import ContactForm from "@/components/ContactForm";
+import { MotionFade, MotionItem, MotionScale, MotionStagger } from "@/components/ui/motion";
 
 const contactItems = [
   {
@@ -21,9 +19,9 @@ const contactItems = [
   {
     label: "Address",
     icon: "/location.png",
+    legalEntity: "Waxseal Fintech Private Limited",
+    brand: "CAPITAIRE",
     lines: [
-      "Waxseal Fintech Private Limited.",
-      "CAPITAIRE",
       "2nd Floor, Imperial Amity, NH Bypass,",
       "Vyttila, Kochi, Kerala – 682019, India",
     ],
@@ -40,19 +38,12 @@ export default function ContactSection() {
         />
 
         <div className="site-container grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.75fr)_minmax(0,1fr)] lg:gap-8">
-          <MotionFade
-            className="h-[360px] w-full overflow-hidden rounded-[4px] bg-[#E5E5E5] md:h-[480px] lg:h-full lg:min-h-[600px]"
-          >
-            <iframe
-              src={MAP_EMBED_URL}
-              title="CAPITAIRE Kochi office on Google Maps"
-              className="h-full w-full border-0"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </MotionFade>
+          {/* Form — left, large column */}
+          <MotionScale delay={0.05}>
+            <ContactForm />
+          </MotionScale>
 
+          {/* Contact info — right column */}
           <MotionFade delay={0.1} className="flex flex-col">
             <h2 className="font-[family-name:var(--font-inter)] text-[32px] font-semibold leading-[40px] tracking-normal md:text-[38px] md:leading-[46px]">
               Get in Touch
@@ -65,7 +56,7 @@ export default function ContactSection() {
 
             <MotionStagger className="mt-10 flex flex-col gap-10 md:mt-14 md:gap-14">
               {contactItems.map((item) => (
-                <MotionItem key={item.label} className="flex items-center gap-5">
+                <MotionItem key={item.label} className="flex items-start gap-5">
                   <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] md:h-[76px] md:w-[76px]">
                     <Image
                       src={item.icon}
@@ -88,16 +79,19 @@ export default function ContactSection() {
                       </Link>
                     ) : (
                       <address className="mt-1.5 font-[family-name:var(--font-inter)] not-italic">
-                        {item.lines.map((line, i) => (
+                        <span className="block text-[11px] font-medium uppercase leading-none tracking-widest text-[#CBA64B]">
+                          Legal Entity
+                        </span>
+                        <span className="mt-1 block text-[13px] font-normal leading-[18px] tracking-normal text-[#555454]">
+                          {"legalEntity" in item ? item.legalEntity : ""}
+                        </span>
+                        <span className="mt-2 block text-[16px] font-semibold leading-[22px] tracking-normal text-[#1A2334] md:text-[18px]">
+                          {"brand" in item ? item.brand : ""}
+                        </span>
+                        {item.lines.map((line) => (
                           <span
                             key={line}
-                            className={
-                              i === 0
-                                ? "block text-[11px] font-medium uppercase leading-none tracking-widest text-[#CBA64B]"
-                                : i === 1
-                                  ? "mt-1 block text-[16px] font-semibold leading-[22px] tracking-normal text-[#1A2334] md:text-[18px]"
-                                  : "block text-[14px] font-normal leading-[22px] tracking-normal text-[#555454]"
-                            }
+                            className="block text-[14px] font-normal leading-[22px] tracking-normal text-[#555454]"
                           >
                             {line}
                           </span>
