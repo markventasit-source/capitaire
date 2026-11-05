@@ -68,7 +68,7 @@ const slides: readonly Slide[] = [
     title: "Capital Structuring",
     intro:
       "The right capital structure balances growth, control, and risk. We help you raise and organise capital in a way that supports your long-term plans.",
-    href: "/capital-advisory/services#capital-structuring",
+    href: "/capital-advisory/services/capital-structuring",
     image: "/blogimage.png",
     imageAlt:
       "Coins, a wooden house, and figures balanced on a seesaw under an umbrella",
@@ -99,7 +99,7 @@ const slides: readonly Slide[] = [
     title: "Entity Structuring",
     intro:
       "The structure your business operates under shapes its tax, compliance, and ability to grow. We help you choose and build the right one.",
-    href: "/capital-advisory/services#entity-structuring",
+    href: "/capital-advisory/services/entity-structuring",
     image: "/servicedetails.png",
     imageAlt: "An advisor presenting growth charts to a team in a meeting room",
     offerings: [
@@ -129,7 +129,7 @@ const slides: readonly Slide[] = [
     title: "Cross-Border Advisory",
     intro:
       "Expanding, investing, or borrowing across borders brings new rules and risks. We help you structure international moves with confidence.",
-    href: "/capital-advisory/services#cross-border-advisory",
+    href: "/capital-advisory/services/cross-border-advisory",
     image: "/aboutsection.png",
     imageAlt:
       "Valuation reports, a laptop with charts, and a model building on a desk",
@@ -153,6 +153,66 @@ const slides: readonly Slide[] = [
         title: "Transfer Pricing",
         description:
           "Price related-party transactions fairly and document them for compliance.",
+      },
+    ],
+  },
+  {
+    title: "Business Governance",
+    intro:
+      "Strong governance turns a founder-dependent business into one that runs with discipline, accountability, and clear performance metrics.",
+    href: "/capital-advisory/services/business-governance",
+    image: "/servicedetails.png",
+    imageAlt: "A team reviewing performance dashboards and governance reports",
+    offerings: [
+      {
+        title: "Internal Financial Controls",
+        description:
+          "Design and implement controls across procurement, payments, sales, and compliance.",
+      },
+      {
+        title: "Governance Frameworks",
+        description:
+          "Define management duties, reporting lines, approval systems, and escalation paths.",
+      },
+      {
+        title: "Internal Control Reviews",
+        description:
+          "Identify gaps in process design, segregation of duties, and policy adherence.",
+      },
+      {
+        title: "Performance Measurement",
+        description:
+          "Build KPI dashboards and review mechanisms aligned to strategy and budget.",
+      },
+    ],
+  },
+  {
+    title: "Succession & Exit Advisory",
+    intro:
+      "Every business eventually faces a transition — in leadership, ownership, or both. We help you plan for it early so value is preserved and continuity secured.",
+    href: "/capital-advisory/services/succession-exit-advisory",
+    image: "/blogimage.png",
+    imageAlt: "Two business leaders reviewing a succession roadmap together",
+    offerings: [
+      {
+        title: "Business Succession Planning",
+        description:
+          "Map ownership, leadership, and governance transitions for long-term continuity.",
+      },
+      {
+        title: "Ownership Transition",
+        description:
+          "Structure share transfers, family inheritance, and investor exits cleanly.",
+      },
+      {
+        title: "Business Continuity",
+        description:
+          "Reduce dependence on key individuals and build processes that outlast any one person.",
+      },
+      {
+        title: "Exit Planning",
+        description:
+          "Prepare financials, governance, and ownership for a value-maximising transaction.",
       },
     ],
   },
