@@ -105,7 +105,6 @@ export default function CommonQuestions() {
           <Accordion
             type="single"
             collapsible
-            defaultValue="faq-0"
             className="gap-0"
           >
             {faqItems.map((item, index) => (

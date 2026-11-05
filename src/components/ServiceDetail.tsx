@@ -128,7 +128,7 @@ export default function ServiceDetail({ heading, image, topics }: ServiceDetailP
                 </ul>
               </div>
 
-              <Accordion type="single" collapsible defaultValue="faq-0" className="gap-0">
+              <Accordion type="single" collapsible className="gap-0">
                 {faqItems.slice(0, 4).map((item, index) => (
                   <AccordionItem
                     key={item.question}
