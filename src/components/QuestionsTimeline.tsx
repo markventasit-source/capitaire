@@ -20,7 +20,7 @@ export default function QuestionsTimeline() {
         <>
           We build the foundation first: a credible valuation, a financial model that explains returns,
           and an investor narrative that connects your numbers to your ambition.{" "}
-          <span className="text-primary font-normal">Valuation, model, deck, and readiness become one story.</span>
+          <span className="text-primary font-normal">Valuation, model, pitch deck, and investor readiness become one story.</span>
         </>
       ),
     },
@@ -28,7 +28,7 @@ export default function QuestionsTimeline() {
       question: "“If I take an investor, will I lose control of what I built?”",
       response: (
         <>
-          Control is usually lost through poor terms, not through capital itself. We shape the instrument,
+          Control is usually lost through poor terms, not through structuring capital itself. We shape the instrument,
           equity percentage, reserved matters, promoter rights, and shareholder agreement so funding enters
           with <span className="text-primary font-normal">clear protection for decision-making and upside.</span>
         </>

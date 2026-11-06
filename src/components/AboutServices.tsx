@@ -74,24 +74,24 @@ const slides: readonly Slide[] = [
       "Coins, a wooden house, and figures balanced on a seesaw under an umbrella",
     offerings: [
       {
-        title: "Funding Strategy",
-        description:
-          "Plan the right mix of equity, debt, and internal funding for each stage of growth.",
-      },
-      {
-        title: "Ownership & Shareholding",
-        description:
-          "Design shareholding that protects control and aligns founders, investors, and partners.",
-      },
-      {
-        title: "ESOPs & Incentives",
-        description:
-          "Structure stock options and incentive plans that reward and retain key talent.",
-      },
-      {
         title: "Shareholder Agreements",
         description:
-          "Set clear terms on rights, exits, and decision-making before conflicts arise.",
+          "Define ownership, governance, rights, responsibilities, and exit mechanisms.",
+      },
+      {
+        title: "Capital Instruments",
+        description:
+          "Structure debt, equity, and convertible instruments to meet funding needs.",
+      },
+      {
+        title: "Sweat Equity for Promoters",
+        description:
+          "Structure sweat equity to recognise promoter contributions and protect shareholders.",
+      },
+      {
+        title: "Employee Stock Ownership Plans (ESOPs)",
+        description:
+          "Align employee performance with long-term business value creation.",
       },
     ],
   },
@@ -104,24 +104,19 @@ const slides: readonly Slide[] = [
     imageAlt: "An advisor presenting growth charts to a team in a meeting room",
     offerings: [
       {
-        title: "Entity Selection",
+        title: "Corporate Reorganisation",
         description:
-          "Choose between LLP, private limited, partnership, and other structures for your goals.",
+          "Simplify structures to improve efficiency, transparency, and investor readiness.",
       },
       {
-        title: "Group Restructuring",
+        title: "Business Transfer Advisory",
         description:
-          "Reorganise holding and subsidiary structures for efficiency and clarity.",
+          "Structure business transfers while protecting operational continuity.",
       },
       {
-        title: "Mergers & Demergers",
+        title: "Business & Entity Formation",
         description:
-          "Plan and execute consolidations, spin-offs, and business transfers.",
-      },
-      {
-        title: "Compliance Alignment",
-        description:
-          "Keep your structure aligned with company law, tax, and regulatory requirements.",
+          "Choose structures aligned with taxation, governance, scalability, and growth.",
       },
     ],
   },
@@ -135,24 +130,29 @@ const slides: readonly Slide[] = [
       "Valuation reports, a laptop with charts, and a model building on a desk",
     offerings: [
       {
-        title: "Foreign Investment (FDI & ODI)",
+        title: "International Holding Structures",
         description:
-          "Structure inbound and outbound investments in line with FEMA and RBI regulations.",
+          "Design efficient structures for global ownership and operations.",
       },
       {
-        title: "International Holdings",
+        title: "Foreign Investment into India",
         description:
-          "Set up overseas holding structures that support growth and control.",
+          "Structure foreign investments in India with regulatory compliance.",
       },
       {
-        title: "External Borrowings",
+        title: "Outbound Investments",
         description:
-          "Plan cross-border borrowings, ECBs, and intercompany funding.",
+          "Structure overseas investments for compliant and efficient expansion.",
+      },
+      {
+        title: "Cross-Border Borrowings",
+        description:
+          "Structure overseas borrowings within applicable regulatory frameworks.",
       },
       {
         title: "Transfer Pricing",
         description:
-          "Price related-party transactions fairly and document them for compliance.",
+          "Develop compliant transfer pricing frameworks for cross-border transactions.",
       },
     ],
   },
@@ -167,22 +167,22 @@ const slides: readonly Slide[] = [
       {
         title: "Internal Financial Controls",
         description:
-          "Design and implement controls across procurement, payments, sales, and compliance.",
+          "Strengthen accountability, reporting, and financial controls.",
       },
       {
         title: "Governance Frameworks",
         description:
-          "Define management duties, reporting lines, approval systems, and escalation paths.",
+          "Build frameworks for effective decision-making, accountability, and oversight.",
       },
       {
         title: "Internal Control Reviews",
         description:
-          "Identify gaps in process design, segregation of duties, and policy adherence.",
+          "Identify control gaps and strengthen business processes.",
       },
       {
         title: "Performance Measurement",
         description:
-          "Build KPI dashboards and review mechanisms aligned to strategy and budget.",
+          "Align KPIs with strategic objectives and business performance.",
       },
     ],
   },
@@ -197,22 +197,22 @@ const slides: readonly Slide[] = [
       {
         title: "Business Succession Planning",
         description:
-          "Map ownership, leadership, and governance transitions for long-term continuity.",
+          "Plan ownership and leadership continuity across generations.",
       },
       {
         title: "Ownership Transition",
         description:
-          "Structure share transfers, family inheritance, and investor exits cleanly.",
+          "Structure smooth ownership and leadership transitions.",
       },
       {
         title: "Business Continuity",
         description:
-          "Reduce dependence on key individuals and build processes that outlast any one person.",
+          "Build frameworks that help businesses thrive beyond individual leadership.",
       },
       {
         title: "Exit Planning",
         description:
-          "Prepare financials, governance, and ownership for a value-maximising transaction.",
+          "Plan structured exits that preserve value and ensure a smooth ownership transition.",
       },
     ],
   },

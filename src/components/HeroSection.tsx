@@ -125,8 +125,8 @@ function DesktopHero() {
           </h1>
 
           <p className="max-w-xl text-base font-normal leading-6 text-[#A5ADBC]">
-            We help promoters understand valuation, raise-ready structure,
-            investor terms, cross-border capital, governance, and succession with
+            We help promoters understand valuation, fund raising structures,
+            investor terms, cross-border capital infusion, governance, and succession with
             one connected advisory journey.
           </p>
 
