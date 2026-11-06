@@ -40,7 +40,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   return (
     <>
       <PageBanner
-        title="Services"
+        title={detail.heading}
         breadcrumb={[
           { label: "All Services", href: "/capital-advisory/services" },
           { label: service!.title.join(" ") },

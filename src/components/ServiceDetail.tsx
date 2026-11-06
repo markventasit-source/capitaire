@@ -32,14 +32,8 @@ export default function ServiceDetail({ heading, image, topics }: ServiceDetailP
   const topic = topics[active];
 
   return (
-    <section className="w-full bg-[#F3F8FF] pb-14 pt-12 text-[#1A2334] md:pb-24 md:pt-20">
+    <section className="w-full bg-[#F3F8FF] pb-14 pt-6 text-[#1A2334] md:pb-24 md:pt-10">
       <div className="site-container">
-        <MotionFade>
-          <h1 className="font-[family-name:var(--font-inter)] text-[32px] font-semibold leading-[40px] tracking-normal md:text-[48px] md:leading-[54.8px]">
-            {heading}
-          </h1>
-        </MotionFade>
-
         <div className="mt-8 grid grid-cols-1 gap-6 md:mt-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:gap-x-8 xl:grid-cols-[316px_minmax(0,1fr)] xl:gap-x-12">
           <MotionStagger className="flex flex-col gap-3 lg:col-start-1 lg:row-start-1">
             {topics.map((item, index) => {
