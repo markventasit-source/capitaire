@@ -16,7 +16,7 @@ export default function AboutHero() {
               Business Challenges.
             </h2>
 
-            <div className="flex mr-12 max-w-[760px] flex-col gap-5 text-justify font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454]">
+            <div className="flex max-w-[760px] flex-col gap-5 text-justify font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454] md:mr-12">
               <p>
                 CAPITAIRE is a multidisciplinary Capital Advisory and Business
                 Solutions firm that helps businesses address complex challenges

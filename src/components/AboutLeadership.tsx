@@ -9,7 +9,7 @@ export default function AboutLeadership() {
           <h2 className="font-[family-name:var(--font-inter)] text-[32px] font-semibold leading-[40px] tracking-normal md:text-[48px] md:leading-[54.8px]">
             Meet Our Leadership
           </h2>
-          <p className="mt-5 text-justify [text-align-last:center] font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454] md:mt-6">
+          <p className="mt-5 font-[family-name:var(--font-inter)] text-[16px] font-normal leading-[24px] tracking-normal text-[#555454] md:mt-6 md:text-justify md:[text-align-last:center]">
             Capitaire is built on a team of professionals and managers with
             experience from leading consulting firms and corporations like EY,
             KPMG, Deloitte, Reliance, Grant Thornton and others. Our

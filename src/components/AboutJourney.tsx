@@ -53,13 +53,13 @@ export default function AboutJourney() {
             {stats.map((stat) => (
               <div
                 key={stat.label.join(" ")}
-                className="border-l border-[#E5E5E5] pl-5 md:pl-6"
+                className="min-w-0 border-l border-[#E5E5E5] pl-4 md:pl-6"
               >
-                <p className="font-[family-name:var(--font-inter)] text-[36px] font-semibold leading-none text-[#CBA64B] md:text-[44px]">
+                <p className="font-[family-name:var(--font-inter)] text-[32px] font-semibold leading-none text-[#CBA64B] md:text-[44px]">
                   <NumberTicker value={stat.value} className="tracking-normal" />
                   +
                 </p>
-                <p className="mt-3 font-[family-name:var(--font-inter)] text-[14px] font-normal uppercase leading-[22px] tracking-normal text-[#555454] md:text-[16px] md:leading-[24px]">
+                <p className="mt-3 font-[family-name:var(--font-inter)] text-[13px] font-normal uppercase leading-[20px] tracking-normal text-[#555454] md:text-[16px] md:leading-[24px]">
                   {stat.label[0]}
                   <br />
                   {stat.label[1]}

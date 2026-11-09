@@ -26,7 +26,7 @@ export default function AboutStory() {
             className="pointer-events-none absolute right-6 top-0 h-auto w-[110px] md:right-12 md:w-[153px]"
           />
 
-          <MotionFade className="relative flex flex-col gap-4 md:flex-row md:items-end md:gap-12 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-8">
+          <MotionFade className="relative flex flex-col gap-4 lg:flex-row lg:items-end lg:gap-12">
             <h2 className="font-[family-name:var(--font-inter)] text-[32px] font-semibold leading-[40px] tracking-normal text-[#1A2334] md:text-[48px] md:leading-[54.8px]">
               Where <br />
               it all began
