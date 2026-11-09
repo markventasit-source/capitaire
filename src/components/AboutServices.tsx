@@ -107,38 +107,38 @@ const slides: readonly Slide[] = [
 
 function SlideContent({ slide }: { slide: Slide }) {
   return (
-    <div className="grid grid-cols-1 gap-8 rounded-[8px] bg-gradient-to-r from-[#DFD18D] via-[#CBA64B] to-[#8A5923] p-6 md:p-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-10">
+    <div className="grid grid-cols-1 gap-6 rounded-[8px] bg-gradient-to-r from-[#DFD18D] via-[#CBA64B] to-[#8A5923] p-5 md:p-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-10">
       <div className="flex flex-col">
-        <h3 className="font-[family-name:var(--font-inter)] text-[28px] font-semibold leading-tight tracking-normal text-white md:text-[36px]">
+        <h3 className="font-[family-name:var(--font-inter)] text-[22px] font-semibold leading-tight tracking-normal text-white md:text-[36px]">
           {slide.title}
         </h3>
-        <p className="mt-3 max-w-[560px] text-justify font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[22px] tracking-normal text-white/90 md:text-[16px] md:leading-[24px]">
+        <p className="mt-2 font-[family-name:var(--font-inter)] text-[13px] font-normal leading-[20px] tracking-normal text-white/90 md:mt-3 md:max-w-[560px] md:text-justify md:text-[16px] md:leading-[24px]">
           {slide.intro}
         </p>
 
-        <ul className="mt-6 flex flex-col gap-3">
+        <ul className="mt-4 flex flex-col gap-2 md:mt-6 md:gap-3">
           {slide.offerings.map((item, index) => (
             <motion.li
               key={item.title}
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.45, delay: 0.15 + index * 0.07, ease: EASE }}
-              className="flex items-start gap-4 rounded-[4px] bg-[#1A2334] p-4 md:p-5"
+              className="flex items-start gap-3 rounded-[4px] bg-[#1A2334] p-3 md:gap-4 md:p-5"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white md:h-10 md:w-10">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white md:h-10 md:w-10">
                 <Image
                   src="/briefcase-03.png"
                   alt=""
                   width={24}
                   height={24}
-                  className="h-5 w-5 md:h-6 md:w-6"
+                  className="h-4 w-4 md:h-6 md:w-6"
                 />
               </span>
               <div>
-                <h4 className="font-[family-name:var(--font-inter)] text-[16px] font-semibold leading-[24px] tracking-normal text-white md:text-[18px]">
+                <h4 className="font-[family-name:var(--font-inter)] text-[13px] font-semibold leading-[20px] tracking-normal text-white md:text-[18px] md:leading-[24px]">
                   {item.title}
                 </h4>
-                <p className="mt-1 text-justify font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[20px] tracking-normal text-[#A5ADBC]">
+                <p className="mt-0.5 font-[family-name:var(--font-inter)] text-[12px] font-normal leading-[18px] tracking-normal text-[#A5ADBC] md:mt-1 md:text-[14px] md:leading-[20px]">
                   {item.description}
                 </p>
               </div>
@@ -148,14 +148,15 @@ function SlideContent({ slide }: { slide: Slide }) {
 
         <Link
           href={slide.href}
-          className="mt-8 inline-flex w-fit items-center gap-2 rounded-[4px] bg-white px-5 py-3 font-[family-name:var(--font-inter)] text-[14px] font-medium leading-none text-[#1A2334] transition-colors hover:bg-[#FFFCF6]"
+          className="mt-5 inline-flex w-fit items-center gap-2 rounded-[4px] bg-white px-4 py-2.5 font-[family-name:var(--font-inter)] text-[13px] font-medium leading-none text-[#1A2334] transition-colors hover:bg-[#FFFCF6] md:mt-8 md:px-5 md:py-3 md:text-[14px]"
         >
           Learn More
-          <ArrowRight className="h-4 w-4" aria-hidden />
+          <ArrowRight className="h-3.5 w-3.5 md:h-4 md:w-4" aria-hidden />
         </Link>
       </div>
 
-      <div className="relative aspect-[574/626] w-full overflow-hidden rounded-[8px] lg:aspect-auto lg:h-full">
+      {/* Hide image on mobile — not enough room and it pushes content out of view */}
+      <div className="relative hidden aspect-[574/626] w-full overflow-hidden rounded-[8px] lg:block lg:aspect-auto lg:h-full">
         <Image
           src={slide.image}
           alt={slide.imageAlt}
@@ -170,7 +171,7 @@ function SlideContent({ slide }: { slide: Slide }) {
 
 export default function AboutServices() {
   return (
-    <section className="w-full overflow-x-clip bg-white pb-14 text-[#1A2334] md:pb-20">
+    <section className="w-full overflow-x-clip bg-white pb-10 text-[#1A2334] md:pb-20">
       <div className="site-container relative">
         <div
           aria-hidden
@@ -184,16 +185,16 @@ export default function AboutServices() {
         </MotionFade>
       </div>
 
-      <div className="mt-16 md:mt-24">
+      <div className="mt-8 md:mt-16">
         <ScrollStack
           useWindowScroll
-          stackPosition="12%"
-          itemDistance={140}
-          itemStackDistance={22}
+          stackPosition="8%"
+          itemDistance={100}
+          itemStackDistance={18}
           itemScale={0.04}
           baseScale={0.92}
           dimAmount={0.2}
-          holdDistance={180}
+          holdDistance={120}
           smoothScroll
           className="site-container"
         >
