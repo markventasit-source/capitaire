@@ -8,6 +8,7 @@ export type Service = {
   title: readonly [string, string];
   description: string;
   icon: string;
+  image: string;
   detail?: {
     heading: string;
     image: string;
@@ -22,6 +23,7 @@ export const services: readonly Service[] = [
     description:
       "Evaluate business value, financial potential, and growth opportunities.",
     icon: "/i1.svg",
+    image: "/s1.png",
     detail: {
       heading: "Business Valuations & Investor Readiness",
       image: "/servicedetails.png",
@@ -55,6 +57,7 @@ export const services: readonly Service[] = [
     description:
       "Structure funding, ownership, incentives, and shareholder arrangements.",
     icon: "/briefcase-dollar.png",
+    image: "/s2.png",
     detail: {
       heading: "Capital Structuring",
       image: "/servicedetails.png",
@@ -88,6 +91,7 @@ export const services: readonly Service[] = [
     description:
       "Optimise business structures for efficiency, compliance, and growth.",
     icon: "/setup-01.png",
+    image: "/s3.png",
     detail: {
       heading: "Entity Structuring",
       image: "/servicedetails.png",
@@ -116,6 +120,7 @@ export const services: readonly Service[] = [
     description:
       "Structure international investments, borrowings, holdings, and transfer pricing.",
     icon: "/user-switch.png",
+    image: "/s4.png",
     detail: {
       heading: "Cross-Border Advisory",
       image: "/servicedetails.png",
@@ -154,6 +159,7 @@ export const services: readonly Service[] = [
     description:
       "Strengthen governance, controls, accountability, and business performance.",
     icon: "/justice-scale-01.png",
+    image: "/s5.png",
     detail: {
       heading: "Business Governance",
       image: "/servicedetails.png",
@@ -187,6 +193,7 @@ export const services: readonly Service[] = [
     description:
       "Plan succession, transitions, continuity, and value-preserving exits.",
     icon: "/message-user-02.png",
+    image: "/s6.png",
     detail: {
       heading: "Succession & Exit Advisory",
       image: "/servicedetails.png",

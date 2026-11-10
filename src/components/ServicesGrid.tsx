@@ -44,11 +44,11 @@ export default function ServicesGrid() {
 
             <div className="relative aspect-[262/335] w-[40%] max-w-[262px] shrink-0">
               <Image
-                src="/servicepage.png"
+                src={service.image}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 262px, 40vw"
-                className="object-contain"
+                className="object-cover"
               />
             </div>
           </MotionItem>
