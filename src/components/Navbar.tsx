@@ -46,6 +46,7 @@ const compactMenuItems = [
   { label: "Home", href: HOME },
   { label: "About Us", href: `${HOME}/about` },
   { label: "Services", href: `${HOME}/services` },
+  { label: "Blog", href: `${HOME}/blog` },
   { label: "Contact Us", href: `${HOME}/contact` },
 ] as const;
 

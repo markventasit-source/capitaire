@@ -50,6 +50,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         heading={detail.heading}
         image={detail.image}
         topics={detail.topics}
+        faqs={detail.faqs}
       />
       <MobileFooter />
       <div className="max-[589px]:hidden">

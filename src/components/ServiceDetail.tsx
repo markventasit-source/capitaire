@@ -13,8 +13,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faqItems, promisePoints } from "@/components/CommonQuestions";
-import type { ServiceTopic } from "@/data/services";
+import { promisePoints } from "@/components/CommonQuestions";
+import type { ServiceFaq, ServiceTopic } from "@/data/services";
 
 const contacts = [
   { icon: "/mail.png", label: "info@capitaire.com", href: "mailto:info@capitaire.com" },
@@ -25,9 +25,10 @@ type ServiceDetailProps = {
   heading: string;
   image: string;
   topics: readonly ServiceTopic[];
+  faqs: readonly ServiceFaq[];
 };
 
-export default function ServiceDetail({ heading, image, topics }: ServiceDetailProps) {
+export default function ServiceDetail({ heading, image, topics, faqs }: ServiceDetailProps) {
   const [active, setActive] = useState(0);
   const topic = topics[active];
 
@@ -123,7 +124,7 @@ export default function ServiceDetail({ heading, image, topics }: ServiceDetailP
               </div>
 
               <Accordion type="single" collapsible className="gap-0">
-                {faqItems.slice(0, 4).map((item, index) => (
+                {faqs.slice(0, 5).map((item, index) => (
                   <AccordionItem
                     key={item.question}
                     value={`faq-${index}`}

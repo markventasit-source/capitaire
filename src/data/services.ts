@@ -1,3 +1,8 @@
+export type ServiceFaq = {
+  question: string;
+  answer: string;
+};
+
 export type ServiceTopic = {
   title: string;
   description: string;
@@ -13,6 +18,7 @@ export type Service = {
     heading: string;
     image: string;
     topics: readonly ServiceTopic[];
+    faqs: readonly ServiceFaq[];
   };
 };
 
@@ -26,7 +32,7 @@ export const services: readonly Service[] = [
     image: "/s6.png",
     detail: {
       heading: "Business Valuations & Investor Readiness",
-      image: "/servicedetails.png",
+      image: "/Business Valuations & Investor Readiness.png",
       topics: [
         {
           title: "Business Review",
@@ -49,6 +55,13 @@ export const services: readonly Service[] = [
             "Getting investments is not only about convincing investors of the company's growth capacity but also providing them with enough knowledge about the business models, opportunities, positions, finances, capabilities, risks, and the use of capital.\n\nAt CAPITAIRE, we assist companies to create investor presentations which convey strategy, operating model, growth, financials, and investment case. We integrate relevant information about the company and finance in order to provide an integrated story with sound assumptions and objectives.\n\nAdditionally, our methodology looks into the expectations that the investors may have in relation to the governance, accounting and finance, the ownership structure, risk management, and scalability. Identifying information deficiencies and enhancing the communication of the business case allows organisations to be better prepared for conversations with potential investors and financiers.",
         },
       ],
+      faqs: [
+        { question: "Why is a business review important for a company?", answer: "A business review will assist in finding areas where there are operational weaknesses, financial performance weaknesses, management weaknesses, and areas of improvement for a company." },
+        { question: "What does a business review typically include?", answer: "The business review looks into issues relating to finance, operations, customers, management, markets, and business value drivers." },
+        { question: "What is financial modelling, and why does a business need it?", answer: "Financial modelling is the process where a company's plans are translated to financial forecasts, which enables the firm to know its financing needs and measure profitability." },
+        { question: "How far ahead should a business prepare financial projections?", answer: "Businesses typically make financial projections for a period of three to five years, based on their goals and funding needs." },
+        { question: "How is the value of a business calculated?", answer: "There are three approaches used in business valuation: income approach, market approach, and cost approach. Business valuation depends on financial performance, potential future earnings, assets, market environment, and risks." },
+      ],
     },
   },
   {
@@ -60,7 +73,7 @@ export const services: readonly Service[] = [
     image: "/s2.png",
     detail: {
       heading: "Capital Structuring",
-      image: "/servicedetails.png",
+      image: "/Capital Structuring.png",
       topics: [
         {
           title: "Shareholder Agreements",
@@ -83,6 +96,13 @@ export const services: readonly Service[] = [
             "In addition to the strategy and capital of a business, there is another factor that determines the success of the enterprise. This factor is the recruitment of qualified personnel who are motivated to work hard and remain loyal to the organisation. This goal may be achieved by implementing ESOPs.\n\nCAPITAIRE will help your company to determine and design ESOP structures based on their corporate goals, ownership model, need for employee retention, and growth prospects. The consultation process takes into account considerations like eligibility, allocation, vesting, exercise, dilution, as well as legal and tax considerations.\n\nIn this regard, we assist the promoter in evaluating the potential role of ESOP in the engagement of the employees, succession planning, and the creation of a performance-driven culture. The ultimate aim is to create a structure that would be commercially viable for the company.",
         },
       ],
+      faqs: [
+        { question: "Why does a company require a shareholder agreement?", answer: "A shareholder agreement clarifies the rights and obligations of the shareholders, their voting powers, interests, and provisions for exits and helps avoid conflict situations." },
+        { question: "What are the components of a shareholder agreement?", answer: "Some of the common elements of a shareholder agreement are shareholding, rights and obligations, reserved matters, transfer restrictions, dispute settlement clauses, dividend policy, and provisions for exit." },
+        { question: "Which are the various capital instruments that a business can raise capital from?", answer: "Equity shares, preference shares, debentures, loans, and convertible capital instruments are some of the capital instruments from which businesses can raise money." },
+        { question: "How do businesses decide whether to use debt or equity to raise funds?", answer: "Depending on the funding requirement, ability to repay the debt, cash flows, and the control promoters want to retain, businesses make the decision." },
+        { question: "What is sweat equity, and what are its advantages for the promoters of businesses?", answer: "Sweat equity is where a promoter makes an input into the business that is not monetary in nature; it is compensated in an equity structure." },
+      ],
     },
   },
   {
@@ -94,7 +114,7 @@ export const services: readonly Service[] = [
     image: "/s3.png",
     detail: {
       heading: "Entity Structuring",
-      image: "/servicedetails.png",
+      image: "/Entitystructuring.png",
       topics: [
         {
           title: "Corporate Reorganisation",
@@ -112,6 +132,13 @@ export const services: readonly Service[] = [
             "Choosing the proper business entity is a critical business decision that will impact various areas of business operations, including ownership, taxation, management, funding options, regulations and future growth. What may be the best choice for a new business may no longer be the case as the business grows.\n\nWe assist the promoters in selecting appropriate structures for their enterprises based on the model of their business, their ownership structure, operational needs, risk appetite, and plans for the future. The selection process takes into consideration ease of doing business, interests of the promoters, obligations, taxation, attractiveness to investors, and flexibility.\n\nWe also assist in assessing the suitability of the proposed structure for potential future funding, changes in ownership and good corporate governance. Through such assessments, we enable business owners to make informed decisions when selecting an appropriate business structure and laying down a solid business foundation.",
         },
       ],
+      faqs: [
+        { question: "Explain what corporate restructuring is. When do you need it?", answer: "Corporate Restructuring involves restructuring the entity structure, operations, and legalities to streamline operations, simplify management and resolve business issues for future growth." },
+        { question: "What is business transfer? How is it made?", answer: "Business transfer involves transferring the business or venture, assets, or operations from one company to another via a properly structured transaction." },
+        { question: "What is the best business structure to set up the company in India?", answer: "That depends on the form of ownership, liabilities, taxation, finance and regulation, apart from future growth considerations. There are Private Limited Companies, LLPs, Partnerships, and Sole Proprietorships." },
+        { question: "What is Overseas Direct Investment (ODI)? How can an Indian company make ODI?", answer: "ODI allows qualifying Indian entities and individuals to make investments in foreign enterprises within the framework of the Overseas Investment Rules, FEMA Regulations and RBI reporting requirements." },
+        { question: "What are the compliance requirements to raise ECB in India?", answer: "A Company should abide by applicable ECB conditions, recognised lending institution conditions, permissible end-use restrictions, limits, maturity requirements and RBI reporting requirements." },
+      ],
     },
   },
   {
@@ -123,7 +150,7 @@ export const services: readonly Service[] = [
     image: "/s4.png",
     detail: {
       heading: "Cross-Border Advisory",
-      image: "/servicedetails.png",
+      image: "/crossborderadvisory.png",
       topics: [
         {
           title: "International Holding Structures",
@@ -151,6 +178,13 @@ export const services: readonly Service[] = [
             "Appropriate pricing policy, documentation, and the compliance with any transfer pricing laws are necessary when conducting business internationally among related entities. Without an effective framework, problems such as tax liability, disagreements, and lack of transparency may arise.\n\nCAPITAIRE provides recommendations to businesses concerning the assessment of transactions between related parties as well as the establishment of transfer pricing policies taking into account the nature of transactions, the functions carried out, assets used, risks undertaken, and market environment.\n\nThe methodology involves taking into account relevant transfer pricing principles, documentation needs, intercompany dealings, and the business nature of the transaction. Our services assist clients in recognizing risks in transfer pricing as well as strengthening their transfer pricing process and intercompany policy to match their operating structure.",
         },
       ],
+      faqs: [
+        { question: "Why is a business review important for a company?", answer: "A business review will assist in finding areas where there are operational weaknesses, financial performance weaknesses, management weaknesses, and areas of improvement for a company." },
+        { question: "What does a business review typically include?", answer: "The business review looks into issues relating to finance, operations, customers, management, markets, and business value drivers." },
+        { question: "What is financial modelling, and why does a business need it?", answer: "Financial modelling is the process where a company's plans are translated to financial forecasts, which enables the firm to know its financing needs and measure profitability." },
+        { question: "How far ahead should a business prepare financial projections?", answer: "Businesses typically make financial projections for a period of three to five years, based on their goals and funding needs." },
+        { question: "How is the value of a business calculated?", answer: "There are three approaches used in business valuation: income approach, market approach, and cost approach. Business valuation depends on financial performance, potential future earnings, assets, market environment, and risks." },
+      ],
     },
   },
   {
@@ -162,7 +196,7 @@ export const services: readonly Service[] = [
     image: "/s5.png",
     detail: {
       heading: "Business Governance",
-      image: "/servicedetails.png",
+      image: "/businessgovernance.png",
       topics: [
         {
           title: "Internal Financial Controls",
@@ -185,6 +219,17 @@ export const services: readonly Service[] = [
             "Sustainable growth of any business requires proper understanding as to whether the company achieves its goals both strategically and operationally. Without proper performance measurement, management may face difficulties in detecting deviations, evaluating the impact of decision-making, and identifying the areas that need improvement.\n\nOur services cover the development of performance measurement mechanisms which will correlate strategic directions with their practical implementation in terms of relevant key performance indicators (KPIs), measurable targets, responsible persons for reporting, and performance review within the budget and business plan of an organisation.\n\nFinancial and non-financial indicators may include, but are not limited to, sales, profitability, cash flow, working capital management, resource management, efficiency, etc., depending on the nature of the company's business. Evaluation of the appropriateness of management information systems in the decision-making process is covered as well. Proper performance review mechanisms will enable you to make sound decisions regarding resource allocation and future growth.",
         },
       ],
+      faqs: [
+        { question: "Define internal financial controls and explain their importance for a business.", answer: "Internal financial controls are those processes and procedures that help achieve accurate financial reporting, safeguard the assets of the business, reduce financial risks and increase accountability." },
+        { question: "List some of the elements that make up an internal financial control system.", answer: "The elements of an internal financial control system include approvals, separation of duties, financial reconciliations, access control, documentation, reporting and compliance." },
+        { question: "Define corporate governance framework and explain why a company needs it.", answer: "A corporate governance framework is a set of policies and procedures that defines the direction, management and monitoring of business activities." },
+        { question: "Explain how a company can improve its corporate governance.", answer: "A company can improve corporate governance by defining the responsibilities of management, setting up the approval process, improving the oversight of the board of directors, documenting the decisions and performing performance reviews." },
+        { question: "Describe an internal control review and the elements involved.", answer: "The internal control review assesses processes, approvals, accounting records, reconciliations, and compliance of an entity in order to determine any weakness in controls and provide appropriate recommendations for improvement." },
+        { question: "What is the frequency of conducting an internal control review?", answer: "Organisations should review their internal controls periodically or when there are any changes in business operations, structure, technology, and regulations." },
+        { question: "What is performance measurement within business management?", answer: "Performance measurement in business management refers to assessing the results of a business in terms of finances and operations according to pre-established goals through measurable indicators such as sales, profits, cash flow, productivity, and efficiency." },
+        { question: "What are key performance indicators, and how do they assist businesses?", answer: "Key performance indicators are measurable indicators that companies use to measure progress toward their business goals in order to evaluate performance." },
+        { question: "What KPIs would you track for measuring the financial performance of a business?", answer: "Businesses commonly track revenue growth, gross profit margin, net profit margin, operating cash flow, working capital, receivables turnover, and return on investment, depending on their business model." },
+      ],
     },
   },
   {
@@ -196,7 +241,7 @@ export const services: readonly Service[] = [
     image: "/s1.png",
     detail: {
       heading: "Succession & Exit Advisory",
-      image: "/servicedetails.png",
+      image: "/succesion.png",
       topics: [
         {
           title: "Business Succession Planning",
@@ -218,6 +263,14 @@ export const services: readonly Service[] = [
           description:
             "Exit is a critical strategic point that needs to be planned well in advance of any transaction. It does not matter whether the business owner plans to sell the company, attract a strategic investor, transfer ownership to the next generation or take some other path. Planning can affect the business value, transaction readiness and continuity of its operation.\n\nCAPITAIRE assists business owners to assess available exit options and plan for all the financial, operational, governance and ownership issues related to the transition. The process can include assessment of business performance, evaluation of value drivers, management and process readiness, ownership models and understanding of information needed by the potential investors/buyers.\n\nWe can also assist in identifying the areas which should be sorted out in advance of any transaction, such as financial reporting, internal controls, management dependency, governance and organisational structures. By creating an exit strategy roadmap, we assist business owners in planning for the future.",
         },
+      ],
+      faqs: [
+        { question: "What is business succession planning, and why is it necessary?", answer: "Succession planning prepares an organisation for the transition and change in leadership and ownership in order to avoid future conflicts." },
+        { question: "At what point in time should a business start planning for succession?", answer: "Succession planning must be done at a very early stage before the anticipated leadership change occurs." },
+        { question: "Can you identify various methods for the ownership transfer?", answer: "Ownership transfer may be done via family succession, share transfers, selling to other external investors, management buying out and so forth." },
+        { question: "How do businesses continue after founders exit their companies?", answer: "A business can minimise founder dependence through succession planning, delegation and other relevant procedures and mechanisms." },
+        { question: "What is business exit planning and what exit solutions can be used?", answer: "This kind of planning prepares the business owner for the transition from the position of the owner via sale, strategic investments etc." },
+        { question: "In what way can business valuation help in succession and exit planning?", answer: "Valuing a business helps the owner understand the value of the business and how the ownership transition can be conducted." },
       ],
     },
   },

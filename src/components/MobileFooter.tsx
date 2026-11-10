@@ -4,6 +4,7 @@ const footerLinks = [
   { label: "HOME", href: "/capital-advisory" },
   { label: "ABOUT US", href: "/capital-advisory/about" },
   { label: "SERVICES", href: "/capital-advisory/services" },
+  { label: "BLOG", href: "/capital-advisory/blog" },
   { label: "CONTACT US", href: "/capital-advisory/contact" },
 ] as const;
 
