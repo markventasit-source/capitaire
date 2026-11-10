@@ -23,7 +23,7 @@ export const services: readonly Service[] = [
     description:
       "Evaluate business value, financial potential, and growth opportunities.",
     icon: "/i1.svg",
-    image: "/s1.png",
+    image: "/s6.png",
     detail: {
       heading: "Business Valuations & Investor Readiness",
       image: "/servicedetails.png",
@@ -193,7 +193,7 @@ export const services: readonly Service[] = [
     description:
       "Plan succession, transitions, continuity, and value-preserving exits.",
     icon: "/message-user-02.png",
-    image: "/s6.png",
+    image: "/s1.png",
     detail: {
       heading: "Succession & Exit Advisory",
       image: "/servicedetails.png",
