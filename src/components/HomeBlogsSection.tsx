@@ -23,7 +23,10 @@ function BlogCard({
   post: (typeof posts)[number];
 }) {
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-[8px] bg-white">
+    <Link
+      href={`/capital-advisory/blog/${post.slug}`}
+      className="group flex h-full flex-col overflow-hidden rounded-[8px] bg-white transition-shadow hover:shadow-[0_12px_32px_rgba(26,35,52,0.08)]"
+    >
       <div className="relative aspect-[386/220] w-full shrink-0 overflow-hidden">
         <Image
           src={post.image}
@@ -39,20 +42,17 @@ function BlogCard({
           <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[#CBA64B]" />
           {post.date}
         </p>
-        <h3 className="mt-4 flex-1 font-[family-name:var(--font-inter)] text-[16px] font-medium leading-[24px] tracking-normal text-[#1A2334] md:text-[20px] md:leading-[28px] xl:text-[22px] xl:leading-[30px]">
+        <h3 className="mt-4 flex-1 font-[family-name:var(--font-inter)] text-[16px] font-medium leading-[24px] tracking-normal text-[#1A2334] transition-colors group-hover:text-[#CBA64B] md:text-[20px] md:leading-[28px] xl:text-[22px] xl:leading-[30px]">
           {post.title}
         </h3>
-        <Link
-          href="/capital-advisory/blog"
-          className="group mt-5 flex w-fit items-center gap-3 font-[family-name:var(--font-inter)] text-[14px] font-normal leading-none text-[#1A2334]"
-        >
+        <span className="mt-5 flex w-fit items-center gap-3 font-[family-name:var(--font-inter)] text-[14px] font-normal leading-none text-[#1A2334]">
           Read more
           <span className="flex h-8 w-8 items-center justify-center rounded-[4px] bg-[linear-gradient(135deg,#DFD18D_0%,#CBA64B_50%,#8A5923_100%)] text-white transition-transform duration-300 group-hover:translate-x-1">
             <ArrowRight className="h-4 w-4" aria-hidden />
           </span>
-        </Link>
+        </span>
       </div>
-    </div>
+    </Link>
   );
 }
 

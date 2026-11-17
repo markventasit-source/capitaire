@@ -6,37 +6,9 @@ import { Marquee } from "@/components/ui/marquee";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { mobileHeroTitles } from "@/components/HeroSection";
+import { blogPosts } from "@/data/blogs";
 
-const posts = [
-  {
-    title: "Limited Liability Partnership (LLP) Compliance Manual",
-    category: "Blog",
-    date: "July 2026",
-    image: "/blogimage.png",
-    href: "/capital-advisory/blog",
-  },
-  {
-    title: "Limited Liability Partnership (LLP) Compliance Manual",
-    category: "Blog",
-    date: "July 2026",
-    image: "/blogimage.png",
-    href: "/capital-advisory/blog",
-  },
-  {
-    title: "Limited Liability Partnership (LLP) Compliance Manual",
-    category: "Blog",
-    date: "July 2026",
-    image: "/blogimage.png",
-    href: "/capital-advisory/blog",
-  },
-  {
-    title: "Limited Liability Partnership (LLP) Compliance Manual",
-    category: "Blog",
-    date: "July 2026",
-    image: "/blogimage.png",
-    href: "/capital-advisory/blog",
-  },
-] as const;
+const posts = blogPosts.slice(0, 4);
 
 function ReadMoreArrow() {
   return (
@@ -80,13 +52,13 @@ export default function MobileBlogsGrid() {
       <div className="mt-8 grid grid-cols-2 gap-3 px-5">
         {posts.map((post, index) => (
           <BlurFade
-            key={`${post.title}-${index}`}
+            key={post.slug}
             inView
             delay={index * 0.08}
             direction="up"
           >
             <Link
-              href={post.href}
+              href={`/capital-advisory/blog/${post.slug}`}
               className="block overflow-hidden rounded-[12px] bg-[#2A3448]"
             >
               <div className="relative h-[108px] w-full">
@@ -100,7 +72,7 @@ export default function MobileBlogsGrid() {
               </div>
               <div className="flex flex-col gap-2 px-3 pb-3.5 pt-3">
                 <p className="font-[family-name:var(--font-inter)] text-[12px] font-normal leading-none tracking-normal text-white">
-                  {post.category} • {post.date}
+                  Blog • {post.date}
                 </p>
                 <h3 className="font-[family-name:var(--font-inter)] text-[14px] font-medium leading-[17px] tracking-normal text-white">
                   {post.title}
