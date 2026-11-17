@@ -63,7 +63,7 @@ export default function BlogGrid({ posts, page, totalPages }: BlogGridProps) {
                   {post.title}
                 </h3>
                 <Link
-                  href={`#${post.slug}`}
+                  href={`/capital-advisory/blog/${post.slug}`}
                   className="group mt-auto flex w-fit items-center gap-3 pt-6 font-[family-name:var(--font-inter)] text-[14px] font-normal leading-none tracking-normal text-[#1A2334] md:text-[16px]"
                 >
                   Read more
