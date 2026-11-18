@@ -24,13 +24,13 @@ export default function ServicesGrid() {
                 />
               </span>
 
-              <h2 className="mt-8 font-[family-name:var(--font-inter)] text-[20px] font-semibold leading-[26px] tracking-normal text-[#1A2334] transition-colors duration-300 group-hover:text-white group-focus-within:text-white md:mt-10 md:text-[24px] md:leading-[30px]">
+              <h2 className="mt-8 font-[family-name:var(--font-inter)] text-[22px] font-semibold leading-[28px] tracking-normal text-[#1A2334] transition-colors duration-300 group-hover:text-white group-focus-within:text-white md:mt-10 md:text-[28px] md:leading-[36px] lg:text-[32px] lg:leading-[40px] xl:text-[36px] xl:leading-[44px]">
                 {service.title[0]}
                 <br />
                 {service.title[1]}
               </h2>
 
-              <p className="mt-3 max-w-[240px] font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[22px] tracking-normal text-[#555454] transition-colors duration-300 group-hover:text-white/90 group-focus-within:text-white/90 md:mt-4">
+              <p className="mt-3 max-w-[240px] font-[family-name:var(--font-inter)] text-[14px] font-normal leading-[22px] tracking-normal text-[#555454] transition-colors duration-300 group-hover:text-white/90 group-focus-within:text-white/90 md:mt-4 lg:max-w-[300px] lg:text-[15px] lg:leading-[24px]">
                 {service.description}
               </p>
 
