@@ -17,7 +17,7 @@ const socialLinks = [
 
 const offices = [
   {
-    legalEntity: "Waxseal Fintech Private Limited",
+    legalEntity: "CAPITAIRE CONSULTANTS LLP",
     brand: "CAPITAIRE",
     lines: [
       "2nd Floor, Imperial Amity, Chalikkavattom,",
@@ -25,7 +25,7 @@ const offices = [
     ],
   },
   {
-    legalEntity: "Waxseal Fintech Private Limited",
+    legalEntity: "CAPITAIRE CONSULTANTS LLP",
     brand: "CAPITAIRE",
     lines: [
       "First Floor, Building No.55-3355B,",

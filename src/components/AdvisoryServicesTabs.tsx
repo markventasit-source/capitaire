@@ -47,8 +47,8 @@ export default function AdvisoryServicesTabs() {
       num: "Service 02",
       title: "Capital Structuring",
       description: "Designing corporate capitalization, equity-debt combinations, and clean balance sheets tailored for direct market financing or strategic investments.",
-      outputs: "Capitalization tables, optimization matrix, dilute charts, instrument structuring briefs.",
-      bestFor: "Early-to-mid stage scale-ups preparing to absorb massive investment blocks without ruining founder equity.",
+      outputs: "Capitalization tables, optimization matrix, dilution charts, instrument structuring briefs.",
+      bestFor: "Early-to-mid stage businesses preparing to absorb investment blocks without ruining founder equity.",
       investorLens: "Assures immediate regulatory compliance and limits post-deal friction.",
       trackRecord: "150+ transactions strategically advised and deployed.",
       lensTitle: "Optimized for continuous growth.",
@@ -59,11 +59,11 @@ export default function AdvisoryServicesTabs() {
       id: "03",
       num: "Service 03",
       title: "Entity Structuring",
-      description: "Aligning multi-firm or fragmented setups into organized holdings or simple consolidated operations ready for due diligence loops.",
+      description: "Aligning multi-firm or fragmented setups into organized holdings or simple consolidated operations ready for due diligence.",
       outputs: "Corporate restructuring blue-prints, share transfers, tax leakage evaluations.",
-      bestFor: "Promoters operating via distinct LLPs, family-held agencies, or disjointed operational hubs.",
+      bestFor: "Promoters operating multiple businesses / locations / verticals via distinct LLPs, family-held agencies, or disjointed operational hubs.",
       investorLens: "Removes corporate complexity, presenting an absolute clear path to target ownership.",
-      trackRecord: "Clean group transitions for leading family-managed enterprises.",
+      trackRecord: "Clean group transitions for leading family-managed enterprises / multiple business verticals.",
       lensTitle: "Clarity breeds confidence.",
       lensDesc: "Unified operational structures ensure asset value isn't leaking through hidden inter-company crossway pipelines.",
       image: "/ups3.webp",
@@ -74,7 +74,7 @@ export default function AdvisoryServicesTabs() {
       title: "Cross-Border Advisory",
       description: "Navigating international funding entry via systematic routing methods honoring FEMA, RBI, FDI frameworks, and tax treaties.",
       outputs: "FDI compliant pathways, multi-jurisdiction reporting architectures, routing briefs.",
-      bestFor: "Companies absorbing foreign direct investments or non-resident Indian (NRI) partner capital blocks.",
+      bestFor: "Companies absorbing foreign direct investments or ready to receive funds from non-resident Indian (NRI) partner.",
       investorLens: "Guarantees cross-border capital inflows are fully defensible and audit-ready from day zero.",
       trackRecord: "Flawless compliance track records on global inbound capital injections.",
       lensTitle: "Borders shouldn't stall momentum.",
@@ -86,8 +86,8 @@ export default function AdvisoryServicesTabs() {
       num: "Service 05",
       title: "Business Governance",
       description: "Introducing rigorous internal financial controls, board rhythms, KPI dashboards, and reporting cadences that separate founder dependencies from functional units.",
-      outputs: "Internal control matrices, corporate governance rulebooks, executive reporting cadences.",
-      bestFor: "Founders seeking to transition operational loads onto autonomous systems to maximize exit premium value.",
+      outputs: "Organisation-wide processes, control mechanisms, corporate governance, and ongoing management reports for decision-making",
+      bestFor: "Growing businesses that needs to outgrown owner-led management and Businesses preparing to bring in investors, lenders or professional managers.",
       investorLens: "Demonstrates high professional stability that operates efficiently without reliant daily founder supervision.",
       trackRecord: "60+ companies' IFC processes implemented.",
       lensTitle: "Systems elevate company value.",
@@ -111,7 +111,7 @@ export default function AdvisoryServicesTabs() {
 
   return (
     <MotionSection className="site-container w-full bg-white py-20 font-sans text-navy">
-      <div className="mb-16 grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+      <div className="mb-16 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
         <MotionFade className="flex flex-col gap-3 lg:col-span-7">
           <span className="text-gradient-primary text-base font-medium leading-6 uppercase tracking-normal text-justify">
             What We Do
@@ -122,8 +122,8 @@ export default function AdvisoryServicesTabs() {
             <span className="text-[#cba64b]">capital journey.</span>
           </h2>
         </MotionFade>
-        <MotionFade className="lg:col-span-5 lg:pt-8" delay={0.1}>
-          <p className="max-w-xl text-[16px] font-normal leading-[22.4px] tracking-normal text-[#555454] lg:ml-auto">
+        <MotionFade className="lg:col-span-5" delay={0.1}>
+          <p className="text-[16px] font-normal leading-[22.4px] tracking-normal text-[#555454] text-justify">
             Each service can stand alone, but the strongest outcomes happen when valuation, structure, contracts, compliance, and governance are treated as one connected plan.
           </p>
         </MotionFade>
@@ -199,7 +199,7 @@ export default function AdvisoryServicesTabs() {
               {([
                 ["OUTPUTS", "outputs"],
                 ["BEST FOR", "bestFor"],
-                ["INVESTOR LENS", "investorLens"],
+                ["PROMOTER LENS", "investorLens"],
                 ["TRACK RECORD", "trackRecord"],
               ] as const).map(([label, key]) => (
                 <div key={key} className="flex flex-col gap-2 border-r border-b border-[#E8DDC3]/60 p-5">
@@ -236,7 +236,7 @@ export default function AdvisoryServicesTabs() {
           >
             <div>
               <span className="rounded-sm bg-white/10 px-2 py-1 text-[16px] font-semibold leading-none uppercase tracking-normal text-white/90">
-                Investor Lens
+                Promoter Lens
               </span>
             </div>
             <h4 className="text-[28px] font-medium leading-[30px] tracking-normal text-[#cba64b]">

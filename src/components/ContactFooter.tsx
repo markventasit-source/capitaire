@@ -13,7 +13,7 @@ const contactItems = [
   {
     icon: "/location.png",
     label: "Location 1",
-    legalEntity: "Waxseal Fintech Private Limited",
+    legalEntity: "CAPITAIRE CONSULTANTS LLP",
     brand: "CAPITAIRE",
     lines: [
       "2nd Floor, Imperial Amity, Chalikkavattom,",
@@ -23,7 +23,7 @@ const contactItems = [
   {
     icon: "/location.png",
     label: "Location 2",
-    legalEntity: "Waxseal Fintech Private Limited",
+    legalEntity: "CAPITAIRE CONSULTANTS LLP",
     brand: "CAPITAIRE",
     lines: [
       "First Floor, Building No.55-3355B,",

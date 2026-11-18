@@ -68,7 +68,7 @@ export default function QuestionsTimeline() {
 
   return (
     <MotionSection className="site-container w-full max-w-full overflow-x-clip bg-navy py-20 font-sans text-white">
-      <div className="mb-20 grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+      <div className="mb-20 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
         <MotionFade className="flex flex-col gap-3 lg:col-span-7">
           <span className="text-gradient-primary text-base font-medium leading-6 uppercase tracking-normal text-justify">
             Promoter Questions
@@ -78,11 +78,9 @@ export default function QuestionsTimeline() {
             <span className="text-primary">The answers need structure.</span>
           </h2>
         </MotionFade>
-        <MotionFade className="lg:col-span-5 lg:pt-8" delay={0.1}>
-          <p className="text-[#848EA3] text-sm md:text-base leading-relaxed max-w-lg lg:ml-auto">
-            CAPITAIRE turns the difficult parts of growth into clean decisions: what the business is worth, 
-            how capital should enter, what control should stay protected, and what systems must exist before 
-            an investor trusts the numbers.
+        <MotionFade className="lg:col-span-5" delay={0.1}>
+          <p className="w-full text-justify text-[#848EA3] text-[16px] leading-relaxed">
+            CAPITAIRE turns the hardest questions of growth into clear decisions: what the business is worth, how capital should come in, how much control the owner keeps, and what systems must be in place before investors will trust the numbers
           </p>
         </MotionFade>
       </div>
@@ -118,7 +116,7 @@ export default function QuestionsTimeline() {
               <div className="relative flex w-full flex-col justify-center gap-3 overflow-hidden rounded-sm border border-white/5 bg-[#1F293D] p-6 md:p-8">
                 <ShineBorder borderWidth={1} duration={12} shineColor="#CBA64B" />
                 <span className="text-gradient-primary text-[15px] font-bold leading-none uppercase tracking-normal text-justify">
-                  Capitaire Response
+                  Capitaire's Response
                 </span>
                 <p className="text-[18px] font-normal leading-[25px] tracking-normal text-[#A5ADBC]">
                   {item.response}

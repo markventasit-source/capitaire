@@ -56,7 +56,7 @@ export const faqItems: FaqItem[] = [
 export default function CommonQuestions() {
   return (
     <MotionSection id="faq" className="site-container w-full scroll-mt-[88px] bg-navy py-20 font-sans text-white">
-      <div className="mb-16 grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+      <div className="mb-16 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
         <MotionFade className="flex flex-col gap-3 lg:col-span-7">
           <span className="text-gradient-primary text-base font-medium leading-6 uppercase tracking-normal text-justify">
             Common Questions
@@ -66,8 +66,8 @@ export default function CommonQuestions() {
             <span className="text-[#cba64b]">first meeting.</span>
           </h2>
         </MotionFade>
-        <MotionFade className="lg:col-span-5 lg:pt-8" delay={0.1}>
-          <p className="max-w-xl text-[16px] font-normal leading-[22.4px] tracking-normal text-[#A5ADBC] lg:ml-auto">
+        <MotionFade className="lg:col-span-5" delay={0.1}>
+          <p className="text-[16px] font-normal leading-[22.4px] tracking-normal text-[#A5ADBC] text-justify">
             The goal is not to sell a complicated service. It is to help you
             understand what decision you are actually facing and what needs to be
             made ready before capital enters.

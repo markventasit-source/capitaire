@@ -29,7 +29,7 @@ const heroCards = [
 ];
 
 const metrics = [
-  { value: 260, label: "Business Empowered" },
+  { value: 260, label: "Businesses Empowered" },
   { value: 150, label: "Transactions Advised" },
   { value: 120, label: "Business Valuations" },
   { value: 100, label: "Investor Onboardings" },
@@ -116,18 +116,17 @@ function DesktopHero() {
           className="h-full min-h-full w-full"
         />
       </div>
-      <main className="site-container relative z-10 grid w-full flex-grow grid-cols-1 items-center gap-12 pt-20 pb-12 lg:grid-cols-12">
-        <MotionHero className="flex flex-col gap-6 lg:col-span-7" delay={0.1}>
-          <h1 className="text-[40px] font-semibold leading-[48px] tracking-normal md:text-[60px] md:leading-[65px]">
-            From uncertainty to <br className="hidden md:inline" />
-            an investor-ready <br />
-            business.
+      <main className="site-container relative z-10 grid w-full flex-grow grid-cols-1 items-center gap-8 pt-20 pb-12 lg:gap-8 xl:gap-12 lg:grid-cols-12">
+        <MotionHero className="flex flex-col gap-6 lg:col-span-6" delay={0.1}>
+          <h1 className="font-[family-name:var(--font-inter)] text-[40px] font-bold leading-[48px] tracking-normal md:text-[55px] md:leading-[65px]">
+           From your first valuation to <br className="hidden md:inline" />
+            final business transfer. <br />
+           <span className="text-primary text-[28px] leading-[36px] md:text-[46px] md:leading-[44px]">Capital advice</span>
+           <span className="text-[28px] leading-[36px] md:text-[46px] md:leading-[44px]"> for every stage in business.</span>
           </h1>
 
-          <p className="max-w-xl text-base font-normal leading-6 text-[#A5ADBC]">
-            We help promoters understand valuation, fund raising structures,
-            investor terms, cross-border capital infusion, governance, and succession with
-            one connected advisory journey.
+          <p className="w-full text-justify text-base font-normal leading-6 text-[#A5ADBC]">
+            We help promoters raise capital the right way through valuation, structuring, investor terms and onboarding compliances. What you need next is to protect that capital with strong processes, governance and Financial Controls, and when the time comes, plan succession or a transfer of the business. One connected journey with one advisory partner – CAPITAIRE
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
@@ -146,18 +145,18 @@ function DesktopHero() {
           </div>
         </MotionHero>
 
-        <div className="grid w-full grid-cols-3 gap-2 sm:gap-4 lg:col-span-5">
+        <div className="grid w-full grid-cols-3 gap-2 sm:gap-3 lg:col-span-6 xl:gap-4">
           {heroCards.map((card, index) => (
             <BlurFade
               key={card.label}
               delay={index * 0.12}
               direction="up"
-              className="group flex w-full flex-col items-center justify-center gap-2 rounded-[6px] border border-white/5 bg-[#1F293D] p-3 text-center backdrop-blur-sm transition-all hover:border-primary/20 sm:gap-6 sm:p-6 sm:h-[228.25px]"
+              className="group relative flex aspect-square w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-[6px] border border-white/5 bg-[#1F293D] p-3 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_28px_rgba(203,166,75,0.25)] sm:gap-3 sm:p-4 lg:gap-2.5 lg:p-3 xl:gap-5 xl:p-6 before:absolute before:inset-0 before:rounded-[6px] before:bg-[radial-gradient(ellipse_at_center,rgba(203,166,75,0.07)_0%,transparent_70%)] before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
             >
-              <div className="relative h-12 w-12 transition-transform duration-300 group-hover:scale-110 sm:h-[115.5px] sm:w-[115.5px]">
+              <div className="relative aspect-square w-[50%] max-h-[115.5px] max-w-[115.5px] transition-transform duration-300 group-hover:scale-110">
                 <Image src={card.icon} alt={card.alt} fill className="object-contain" />
               </div>
-              <span className="text-[10px] font-bold tracking-widest uppercase sm:text-sm">
+              <span className="text-[10px] font-bold tracking-widest uppercase sm:text-xs xl:text-sm">
                 {card.label}
               </span>
             </BlurFade>

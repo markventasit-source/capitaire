@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Inter, Geist, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+const sourceSerif4 = Source_Serif_4({
+  variable: "--font-newsreader",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("no-scrollbar h-full overflow-x-clip", "antialiased", inter.variable, "font-sans", geist.variable)}
+      className={cn("no-scrollbar h-full overflow-x-clip", "antialiased", inter.variable, "font-sans", geist.variable, sourceSerif4.variable)}
     >
       <body className="no-scrollbar relative flex min-h-full w-full max-w-full flex-col overflow-x-clip bg-navy font-sans text-white max-[589px]:bg-transparent">
         {children}

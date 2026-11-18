@@ -120,7 +120,7 @@ export default function ReadinessLens() {
 
   return (
     <MotionSection className="site-container w-full bg-[#F3ECDE] py-20 font-sans text-navy">
-      <div className="mb-16 grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+      <div className="mb-16 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
         <MotionFade className="flex flex-col gap-3 lg:col-span-7">
           <span className="text-gradient-primary text-base font-medium leading-6 uppercase tracking-normal text-justify">
             Readiness Lens
@@ -130,8 +130,8 @@ export default function ReadinessLens() {
             <span className="text-[#cba64b]">closest to yours.</span>
           </h2>
         </MotionFade>
-        <MotionFade className="lg:col-span-5 lg:pt-8" delay={0.1}>
-          <p className="text-[16px] font-normal max-w-xl leading-[22.4px] tracking-normal text-[#555454] lg:ml-auto">
+        <MotionFade className="lg:col-span-5" delay={0.1}>
+          <p className="text-[16px] font-normal leading-[22.4px] tracking-normal text-[#555454] text-justify">
             Choose the starting point that matches your current pressure. We will
             map the advisory path, the documents, and the sequence that gets you
             from uncertainty to investor-ready structure.

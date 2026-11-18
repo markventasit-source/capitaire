@@ -29,7 +29,7 @@ export default function WhyCapitaireGrid() {
     },
     {
       imgSrc: "/3.png",
-      title: "Kerala Market Context",
+      title: "Indian Market Context",
       description:
         "Local promoter realities, NRI links, family ownership, and regional business structures are treated as core context, not side notes.",
     },
