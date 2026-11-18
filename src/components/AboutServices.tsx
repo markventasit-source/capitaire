@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { MotionFade } from "@/components/ui/motion";
 import ScrollStack, { ScrollStackItem } from "@/components/ui/scroll-stack";
+import { services } from "@/data/services";
 
 type Slide = {
   title: string;
@@ -24,7 +25,7 @@ const slides: readonly Slide[] = [
     intro:
       "Every business is in a unique position in the market. Financial reports, customer feedback, and shareholders' insights tell a different story.",
     href: "/capital-advisory/services/business-valuations",
-    image: "/aboutsection.png",
+    image: services.find((s) => s.slug === "business-valuations")?.detail?.image ?? "/aboutsection.png",
     imageAlt: "Valuation reports, a laptop with charts, and a model building on a desk",
     offerings: [
       { title: "Business Plan Review", description: "Identify business strengths, risks, value drivers, and growth opportunities." },
@@ -38,8 +39,8 @@ const slides: readonly Slide[] = [
     intro:
       "The right capital structure balances growth, control, and risk. We help you raise and organise capital in a way that supports your long-term plans.",
     href: "/capital-advisory/services/capital-structuring",
-    image: "/blogimage.png",
-    imageAlt: "Coins, a wooden house, and figures balanced on a seesaw under an umbrella",
+    image: services.find((s) => s.slug === "capital-structuring")?.detail?.image ?? "/blogimage.png",
+    imageAlt: "Capital structuring advisory — shareholder agreements, funding instruments, and equity structures",
     offerings: [
       { title: "Shareholder Agreements", description: "Define ownership, governance, rights, responsibilities, and exit mechanisms." },
       { title: "Capital Instruments", description: "Structure debt, equity, and convertible instruments to meet funding needs." },
@@ -52,8 +53,8 @@ const slides: readonly Slide[] = [
     intro:
       "The structure your business operates under shapes its tax, compliance, and ability to grow. We help you choose and build the right one.",
     href: "/capital-advisory/services/entity-structuring",
-    image: "/servicedetails.png",
-    imageAlt: "An advisor presenting growth charts to a team in a meeting room",
+    image: services.find((s) => s.slug === "entity-structuring")?.detail?.image ?? "/servicedetails.png",
+    imageAlt: "Entity structuring — corporate reorganisation, business formation, and transfer advisory",
     offerings: [
       { title: "Corporate Reorganisation", description: "Simplify structures to improve efficiency, transparency, and investor readiness." },
       { title: "Business Transfer Advisory", description: "Structure business transfers while protecting operational continuity." },
@@ -65,8 +66,8 @@ const slides: readonly Slide[] = [
     intro:
       "Expanding, investing, or borrowing across borders brings new rules and risks. We help you structure international moves with confidence.",
     href: "/capital-advisory/services/cross-border-advisory",
-    image: "/aboutsection.png",
-    imageAlt: "Valuation reports, a laptop with charts, and a model building on a desk",
+    image: services.find((s) => s.slug === "cross-border-advisory")?.detail?.image ?? "/aboutsection.png",
+    imageAlt: "Cross-border advisory — international holding structures, foreign investment, and transfer pricing",
     offerings: [
       { title: "International Holding Structures", description: "Design efficient structures for global ownership and operations." },
       { title: "Foreign Investment into India", description: "Structure foreign investments in India with regulatory compliance." },
@@ -80,8 +81,8 @@ const slides: readonly Slide[] = [
     intro:
       "Strong governance turns a founder-dependent business into one that runs with discipline, accountability, and clear performance metrics.",
     href: "/capital-advisory/services/business-governance",
-    image: "/servicedetails.png",
-    imageAlt: "A team reviewing performance dashboards and governance reports",
+    image: services.find((s) => s.slug === "business-governance")?.detail?.image ?? "/servicedetails.png",
+    imageAlt: "Business governance — internal controls, governance frameworks, and performance measurement",
     offerings: [
       { title: "Internal Financial Controls", description: "Strengthen accountability, reporting, and financial controls." },
       { title: "Governance Frameworks", description: "Build frameworks for effective decision-making, accountability, and oversight." },
@@ -94,8 +95,8 @@ const slides: readonly Slide[] = [
     intro:
       "Every business eventually faces a transition — in leadership, ownership, or both. We help you plan for it early so value is preserved and continuity secured.",
     href: "/capital-advisory/services/succession-exit-advisory",
-    image: "/blogimage.png",
-    imageAlt: "Two business leaders reviewing a succession roadmap together",
+    image: services.find((s) => s.slug === "succession-exit-advisory")?.detail?.image ?? "/blogimage.png",
+    imageAlt: "Succession and exit advisory — succession planning, ownership transition, and exit strategy",
     offerings: [
       { title: "Business Succession Planning", description: "Plan ownership and leadership continuity across generations." },
       { title: "Ownership Transition", description: "Structure smooth ownership and leadership transitions." },
