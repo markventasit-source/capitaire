@@ -121,9 +121,9 @@ export default function MobileFooter() {
             <span className="block font-[family-name:var(--font-inter)] text-[10px] font-medium uppercase leading-none tracking-widest text-[#CBA64B]">
               Legal Entity
             </span>
-            <span className="mt-1 block font-[family-name:var(--font-inter)] text-[13px] font-normal leading-[18px] tracking-normal text-white/60">
+            {/* <span className="mt-1 block font-[family-name:var(--font-inter)] text-[13px] font-normal leading-[18px] tracking-normal text-white/60">
               {office.legalEntity}
-            </span>
+            </span> */}
             <span className="mt-1 block font-[family-name:var(--font-inter)] text-[15px] font-semibold leading-[20px] tracking-normal text-white">
               {office.brand}
             </span>

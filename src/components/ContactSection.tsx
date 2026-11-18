@@ -19,7 +19,7 @@ const contactItems = [
   {
     label: "Address",
     icon: "/location.png",
-    legalEntity: "Waxseal Fintech Private Limited",
+    legalEntity: "CAPITAIRE CONSULTANTS LLP",
     brand: "CAPITAIRE",
     lines: [
       "2nd Floor, Imperial Amity, NH Bypass,",
@@ -77,9 +77,9 @@ export default function ContactSection() {
                         <span className="block text-[11px] font-medium uppercase leading-none tracking-widest text-[#CBA64B]">
                           Legal Entity
                         </span>
-                        <span className="mt-1 block text-[13px] font-normal leading-[18px] tracking-normal text-[#555454]">
+                        {/* <span className="mt-1 block text-[13px] font-normal leading-[18px] tracking-normal text-[#555454]">
                           {"legalEntity" in item ? item.legalEntity : ""}
-                        </span>
+                        </span> */}
                         <span className="mt-2 block text-[16px] font-semibold leading-[22px] tracking-normal text-[#1A2334] md:text-[18px]">
                           {"brand" in item ? item.brand : ""}
                         </span>
