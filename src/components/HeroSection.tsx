@@ -118,15 +118,18 @@ function DesktopHero() {
       </div>
       <main className="site-container relative z-10 grid w-full flex-grow grid-cols-1 items-center gap-8 pt-20 pb-12 lg:gap-8 xl:gap-12 lg:grid-cols-12">
         <MotionHero className="flex flex-col gap-6 lg:col-span-6" delay={0.1}>
-          <h1 className="font-[family-name:var(--font-inter)] text-[40px] font-bold leading-[48px] tracking-normal md:text-[55px] md:leading-[65px]">
-           From your first valuation to <br className="hidden md:inline" />
-            final business transfer. <br />
-           <span className="text-primary text-[28px] leading-[36px] md:text-[46px] md:leading-[44px]">Capital advice</span>
-           <span className="text-[28px] leading-[36px] md:text-[46px] md:leading-[44px]"> for every stage in business.</span>
+          <h1 className="font-[family-name:var(--font-inter)]  text-[40px] font-bold leading-[48px] tracking-normal md:text-[55px] md:leading-[65px]">
+            From your <span className="text-primary">first</span> business plan <br className="hidden md:inline" />
+            to <span className="text-primary">final</span> business succession.
           </h1>
 
           <p className="w-full text-justify text-base font-normal leading-6 text-[#A5ADBC]">
             We help promoters raise capital the right way through valuation, structuring, investor terms and onboarding compliances. What you need next is to protect that capital with strong processes, governance and Financial Controls, and when the time comes, plan succession or a transfer of the business. One connected journey with one advisory partner – CAPITAIRE
+          </p>
+
+          <p className="font-[family-name:var(--font-inter)] italic text-[28px] leading-[36px] md:text-[36px] md:leading-[44px]">
+            Capital advice
+           for every stage of your business.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
