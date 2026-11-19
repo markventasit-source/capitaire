@@ -22,16 +22,14 @@ const rows = [
   clientLogos.slice(ROW_SIZE * 2),
 ];
 
-function LogoCell({ src, border }: { src: string; border?: string }) {
+function LogoCell({ src }: { src: string }) {
   return (
-    <div
-      className={`flex h-[110px] w-[180px] shrink-0 items-center justify-center px-6 py-5 ${border ?? "border-r border-[#E8DDC3]"}`}
-    >
+    <div className="flex h-[110px] w-[220px] shrink-0 items-center justify-center border-r border-[#E8DDC3] px-8 py-4">
       <img
         src={src}
         alt="Client logo"
         loading="eager"
-        className="h-auto max-h-[54px] w-auto max-w-[140px] object-contain"
+        className="h-auto max-h-[70px] w-auto max-w-[160px] object-contain"
       />
     </div>
   );
