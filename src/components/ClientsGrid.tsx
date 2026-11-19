@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { MotionFade, MotionSection } from "@/components/ui/motion";
+import { Marquee } from "@/components/ui/marquee";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const clientLogos = [
@@ -21,46 +22,27 @@ const rows = [
   clientLogos.slice(ROW_SIZE * 2),
 ];
 
-/* ── Desktop marquee (pure CSS, exact px) ── */
-const CELL_W = 200;
-
-function MarqueeRow({ logos, duration, reverse = false, isLast = false }: {
-  logos: string[]; duration: number; reverse?: boolean; isLast?: boolean;
-}) {
-  const items    = [...logos, ...logos];
-  const loopPx   = logos.length * CELL_W;
-  const animName = reverse ? "scroll-right" : "scroll-left";
-
+function LogoCell({ src, border }: { src: string; border?: string }) {
   return (
-    <div className={`overflow-hidden${isLast ? "" : " border-b border-[#E8DDC3]"}`}>
-      <style>{`
-        @keyframes scroll-left  { from { transform: translateX(0); } to { transform: translateX(-${loopPx}px); } }
-        @keyframes scroll-right { from { transform: translateX(-${loopPx}px); } to { transform: translateX(0); } }
-      `}</style>
-      <div
-        className="flex"
-        style={{ animation: `${animName} ${duration}s linear infinite`, willChange: "transform" }}
-      >
-        {items.map((logo, i) => (
-          <div key={i} style={{ width: CELL_W }}
-            className="flex h-[130px] shrink-0 items-center justify-center border-r border-[#E8DDC3] px-6"
-          >
-            <img src={logo} alt="Client logo" loading="eager"
-              className="h-auto max-h-[70px] w-auto max-w-[150px] object-contain" />
-          </div>
-        ))}
-      </div>
+    <div
+      className={`flex h-[110px] w-[180px] shrink-0 items-center justify-center px-6 py-5 ${border ?? "border-r border-[#E8DDC3]"}`}
+    >
+      <img
+        src={src}
+        alt="Client logo"
+        loading="eager"
+        className="h-auto max-h-[54px] w-auto max-w-[140px] object-contain"
+      />
     </div>
   );
 }
 
-/* ── Mobile carousel (3×3 pages, sliding) ── */
+/* ── Mobile carousel (3×3 pages) ── */
 const MOBILE_SLOTS = 9;
 const AUTOPLAY_MS  = 4000;
 const SWIPE_MIN_PX = 40;
 const totalPages   = Math.ceil(clientLogos.length / MOBILE_SLOTS);
 
-// Every page has exactly 9 logos; the last page wraps around to fill its empty cells.
 const pages = Array.from({ length: totalPages }, (_, p) =>
   Array.from({ length: MOBILE_SLOTS }, (_, i) =>
     clientLogos[(p * MOBILE_SLOTS + i) % clientLogos.length]
@@ -75,7 +57,6 @@ function MobileCarousel() {
   const next = () => setPage((p) => (p + 1) % totalPages);
   const prev = () => setPage((p) => (p - 1 + totalPages) % totalPages);
 
-  // Autoplay (skipped when paused or when the user prefers reduced motion)
   useEffect(() => {
     if (paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -99,7 +80,6 @@ function MobileCarousel() {
 
   return (
     <div>
-      {/* Sliding track */}
       <div
         className="overflow-hidden"
         style={{ touchAction: "pan-y" }}
@@ -130,34 +110,18 @@ function MobileCarousel() {
         </div>
       </div>
 
-      {/* Controls */}
       <div className="flex items-center justify-between border-t border-[#E8DDC3] px-4 py-3">
-        <button
-          onClick={prev}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-[#E8DDC3] text-[#1A2334] transition hover:border-[#CBA64B] hover:text-[#CBA64B]"
-          aria-label="Previous"
-        >
+        <button onClick={prev} className="flex h-9 w-9 items-center justify-center rounded-full border border-[#E8DDC3] text-[#1A2334] transition hover:border-[#CBA64B] hover:text-[#CBA64B]" aria-label="Previous">
           <ChevronLeft size={18} />
         </button>
-
         <div className="flex gap-1.5">
           {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => setPage(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === page ? "w-5 bg-[#CBA64B]" : "w-1.5 bg-[#D9D9D9]"
-              }`}
-              aria-label={`Page ${i + 1}`}
-            />
+            <button key={i} onClick={() => setPage(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === page ? "w-5 bg-[#CBA64B]" : "w-1.5 bg-[#D9D9D9]"}`}
+              aria-label={`Page ${i + 1}`} />
           ))}
         </div>
-
-        <button
-          onClick={next}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-[#E8DDC3] text-[#1A2334] transition hover:border-[#CBA64B] hover:text-[#CBA64B]"
-          aria-label="Next"
-        >
+        <button onClick={next} className="flex h-9 w-9 items-center justify-center rounded-full border border-[#E8DDC3] text-[#1A2334] transition hover:border-[#CBA64B] hover:text-[#CBA64B]" aria-label="Next">
           <ChevronRight size={18} />
         </button>
       </div>
@@ -182,17 +146,30 @@ export default function ClientsGrid() {
       </div>
 
       {/* Mobile */}
-      <div className="max-sm:block hidden">
+      <div className="block sm:hidden">
         <div className="overflow-hidden rounded-sm border border-[#E8DDC3]">
           <MobileCarousel />
         </div>
       </div>
 
-      {/* Desktop */}
-      <div className="max-sm:hidden overflow-hidden rounded-sm border border-[#E8DDC3]">
-        <MarqueeRow logos={rows[0]} duration={18} />
-        <MarqueeRow logos={rows[1]} duration={14} reverse />
-        <MarqueeRow logos={rows[2]} duration={22} isLast />
+      {/* Desktop — Marquee component for seamless infinite loop */}
+      <div className="hidden overflow-hidden rounded-sm border border-[#E8DDC3] sm:block">
+        {/* Row 1 — left */}
+        <div className="border-b border-[#E8DDC3]">
+          <Marquee pauseOnHover className="[--duration:30s] [--gap:0px]">
+            {rows[0].map((logo, i) => <LogoCell key={i} src={logo} />)}
+          </Marquee>
+        </div>
+        {/* Row 2 — right */}
+        <div className="border-b border-[#E8DDC3]">
+          <Marquee reverse pauseOnHover className="[--duration:25s] [--gap:0px]">
+            {rows[1].map((logo, i) => <LogoCell key={i} src={logo} />)}
+          </Marquee>
+        </div>
+        {/* Row 3 — left */}
+        <Marquee pauseOnHover className="[--duration:35s] [--gap:0px]">
+          {rows[2].map((logo, i) => <LogoCell key={i} src={logo} />)}
+        </Marquee>
       </div>
     </MotionSection>
   );
