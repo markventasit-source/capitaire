@@ -128,7 +128,7 @@ function DesktopHero() {
           </p>
 
           <p className="font-[family-name:var(--font-inter)] italic text-[28px] leading-[36px] md:text-[36px] md:leading-[44px]">
-           <span className="text-primary">Capital advice</span> 
+           <span className="text-primary">Capital advice </span> 
            for every stage of your business.
           </p>
 
