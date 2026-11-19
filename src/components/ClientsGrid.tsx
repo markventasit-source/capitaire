@@ -11,6 +11,7 @@ const clientLogos = [
   "/logo1.png", "/logo2.jpeg","/logo3.jpeg","/logo4.png", "/logo5.jpeg",
   "/logo6.png", "/logo7.jpeg","/logo8.jpeg","/logo10.jpeg","/logo11.png",
   "/logo12.png","/logo13.jpeg","/logo14.png","/logo15.jpeg","/logo16.png",
+  "/logo17.jpeg","/logo18.jpeg","/logo19.jpeg","/logo20.png",
 ];
 
 const ROW_SIZE = Math.ceil(clientLogos.length / 3);
