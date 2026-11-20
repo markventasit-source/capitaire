@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Geist, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import CookieConsent from "@/components/CookieConsent";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -38,6 +39,7 @@ export default function RootLayout({
     >
       <body className="no-scrollbar relative flex min-h-full w-full max-w-full flex-col overflow-x-clip bg-navy font-sans text-white max-[589px]:bg-transparent">
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

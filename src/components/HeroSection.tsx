@@ -154,12 +154,12 @@ function DesktopHero() {
               key={card.label}
               delay={index * 0.12}
               direction="up"
-              className="group relative flex aspect-square w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-[6px] border border-white/5 bg-[#1F293D] p-3 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_28px_rgba(203,166,75,0.25)] sm:gap-3 sm:p-4 lg:gap-2.5 lg:p-3 xl:gap-5 xl:p-6 before:absolute before:inset-0 before:rounded-[6px] before:bg-[radial-gradient(ellipse_at_center,rgba(203,166,75,0.07)_0%,transparent_70%)] before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100"
+              className="group relative flex aspect-square w-full flex-col items-center justify-center gap-2 overflow-hidden rounded-[6px] border border-white/10 bg-[#1F293D] p-3 text-center backdrop-blur-sm transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/60 hover:bg-[#25324c] hover:shadow-[0_16px_36px_rgba(0,0,0,0.45),0_0_30px_rgba(203,166,75,0.3)] sm:gap-3 sm:p-4 lg:gap-2.5 lg:p-3 xl:gap-5 xl:p-6 before:pointer-events-none before:absolute before:inset-0 before:rounded-[6px] before:bg-[radial-gradient(circle_at_50%_0%,rgba(203,166,75,0.35)_0%,rgba(46,68,112,0.6)_55%,transparent_90%)] before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-[6px] after:bg-[linear-gradient(135deg,rgba(203,166,75,0.2)_0%,rgba(46,68,112,0.4)_50%,rgba(203,166,75,0.15)_100%)] after:opacity-0 after:transition-opacity after:duration-500 hover:after:opacity-100"
             >
-              <div className="relative aspect-square w-[50%] max-h-[115.5px] max-w-[115.5px] transition-transform duration-300 group-hover:scale-110">
+              <div className="relative z-10 aspect-square w-[50%] max-h-[115.5px] max-w-[115.5px] transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)]">
                 <Image src={card.icon} alt={card.alt} fill className="object-contain" />
               </div>
-              <span className="text-[10px] font-bold tracking-widest uppercase sm:text-xs xl:text-sm">
+              <span className="relative z-10 text-[10px] font-bold tracking-widest uppercase transition-colors duration-300 group-hover:text-primary sm:text-xs xl:text-sm">
                 {card.label}
               </span>
             </BlurFade>
